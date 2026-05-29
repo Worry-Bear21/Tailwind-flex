@@ -23,12 +23,6 @@
 
 <script>
 export default {
-    props: {
-        selectedProduct: {
-            type: Object,
-
-        }
-    },
     data() {
         return {
             brandName: '',
