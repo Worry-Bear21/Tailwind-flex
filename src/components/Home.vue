@@ -1,195 +1,193 @@
 <template>
-    <div>
-        <!-- 🟢 ANG UBAN NIMO NGA CONTENT - GIDUGANGAN OG MARGIN SA TAAS para dili matabunan sa Navbar -->
-        <div class="bg-[#EFF0F5] min-h-screen w-screen p-4 sm:p-8 mt-[100px]">
-            <div class="max-w-7xl w-full mx-auto">
 
-                <!-- Banner ug App Section -->
-                <div class="flex justify-center flex-row gap-3 mb-6 w-full">
-                    <img src="https://img.lazcdn.com/g/tps/imgextra/i1/O1CN01gwKU6B1MEcp8LAkzX_!!6000000001403-0-tps-1976-688.jpg_2200x2200q80.jpg_.avif"
-                        alt="" class="w-[78%] h-auto rounded-none shadow-none object-cover">
-                    <div class="w-[20%] bg-gradient-to-b from-[#ED2846] to-[#FF933F] rounded-none shadow-none">
-                        <div class="flex gap-2 px-2 mt-2">
-                            <img src="https://img.lazcdn.com/us/domino/a96c58a6a88070c43bc63444f6774f51.png_120x120q80.png_.avif"
-                                class="w-8" alt="">
-                            <h1 class="text-white font-semibold text-sm flex items-center m-0">TRY OUR APP</h1>
+    <div class="bg-[#EFF0F5] min-h-screen w-screen p-4 sm:p-8 mt-[100px]">
+        <div class="max-w-7xl w-full mx-auto">
+
+            <!-- Banner ug App Section -->
+            <div class="flex justify-center flex-row gap-3 mb-6 w-full">
+                <img src="https://img.lazcdn.com/g/tps/imgextra/i1/O1CN01gwKU6B1MEcp8LAkzX_!!6000000001403-0-tps-1976-688.jpg_2200x2200q80.jpg_.avif"
+                    alt="" class="w-[78%] h-auto rounded-none shadow-none object-cover">
+                <div class="w-[20%] bg-gradient-to-b from-[#ED2846] to-[#FF933F] rounded-none shadow-none">
+                    <div class="flex gap-2 px-2 mt-2">
+                        <img src="https://img.lazcdn.com/us/domino/a96c58a6a88070c43bc63444f6774f51.png_120x120q80.png_.avif"
+                            class="w-8" alt="">
+                        <h1 class="text-white font-semibold text-sm flex items-center m-0">TRY OUR APP</h1>
+                    </div>
+                    <div class="border-0 mt-2 mx-2 h-[110px] rounded-none bg-transparent">
+                        <div class="flex items-center gap-1 pt-1 pl-1">
+                            <svg class="w-3 h-3 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                            </svg>
+                            <p class="text-white text-xs font-medium m-0">4.8 Rated</p>
                         </div>
-                        <div class="border-0 mt-2 mx-2 h-[110px] rounded-none bg-transparent">
-                            <div class="flex items-center gap-1 pt-1 pl-1">
-                                <svg class="w-3 h-3 text-yellow-300" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
+                        <p class="text-white text-xs px-1 mt-1 m-0">Get the Lazada app to enjoy</p>
+                        <div class="mt-1">
+                            <div class="ml-1 mt-1 flex items-center gap-1">
+                                <img src="https://img.lazcdn.com/g/tps/imgextra/i2/O1CN01n3PMa828kJZVuCbPp_!!6000000007970-2-tps-72-72.png_150x150q80.png_.avif"
+                                    class="w-6" alt="">
+                                <p class="font-semibold text-white text-xs m-0">FREE SHIPPING</p>
+                            </div>
+                            <div class="ml-1 mt-1 flex items-center gap-1">
+                                <img src="https://img.lazcdn.com/g/tps/imgextra/i3/O1CN01J03SMW1lebTE7xkaN_!!6000000004844-2-tps-72-72.png_150x150q80.png_.avif"
+                                    class="w-6" alt="">
+                                <p class="font-semibold text-white text-xs m-0">VOUCHERS</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center pb-2 px-2 mt-1">
+                        <img src="https://img.lazcdn.com/us/domino/0942ea5ea6ff9ca262ea382b52b1500e.png_360x360q80.png_.avif"
+                            class="w-18" alt="">
+                        <div class="flex flex-col gap-1">
+                            <div
+                                class="border-0 h-7 bg-white rounded-none w-40 flex items-center justify-center gap-1 hover:bg-gray-100 transition-colors cursor-pointer">
+                                <svg class="w-3 h-3 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    width="30" height="30" fill="currentColor" viewBox="0 0 24 24">
                                     <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                        d="M17.537 12.625a4.421 4.421 0 0 0 2.684 4.047 10.96 10.96 0 0 1-1.384 2.845c-.834 1.218-1.7 2.432-3.062 2.457-1.34.025-1.77-.794-3.3-.794-1.531 0-2.01.769-3.275.82-1.316.049-2.317-1.318-3.158-2.532-1.72-2.484-3.032-7.017-1.27-10.077A4.9 4.9 0 0 1 8.91 6.884c1.292-.025 2.51.869 3.3.869.789 0 2.27-1.075 3.828-.917a4.67 4.67 0 0 1 3.66 1.984 4.524 4.524 0 0 0-2.16 3.805m-2.52-7.432A4.4 4.4 0 0 0 16.06 2a4.482 4.482 0 0 0-2.945 1.516 4.185 4.185 0 0 0-1.061 3.093 3.708 3.708 0 0 0 2.967-1.416Z" />
                                 </svg>
-                                <p class="text-white text-xs font-medium m-0">4.8 Rated</p>
+                                <p class="text-[15px] font-medium text-gray-800 m-0">App Store</p>
                             </div>
-                            <p class="text-white text-xs px-1 mt-1 m-0">Get the Lazada app to enjoy</p>
-                            <div class="mt-1">
-                                <div class="ml-1 mt-1 flex items-center gap-1">
-                                    <img src="https://img.lazcdn.com/g/tps/imgextra/i2/O1CN01n3PMa828kJZVuCbPp_!!6000000007970-2-tps-72-72.png_150x150q80.png_.avif"
-                                        class="w-6" alt="">
-                                    <p class="font-semibold text-white text-xs m-0">FREE SHIPPING</p>
-                                </div>
-                                <div class="ml-1 mt-1 flex items-center gap-1">
-                                    <img src="https://img.lazcdn.com/g/tps/imgextra/i3/O1CN01J03SMW1lebTE7xkaN_!!6000000004844-2-tps-72-72.png_150x150q80.png_.avif"
-                                        class="w-6" alt="">
-                                    <p class="font-semibold text-white text-xs m-0">VOUCHERS</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex justify-between items-center pb-2 px-2 mt-1">
-                            <img src="https://img.lazcdn.com/us/domino/0942ea5ea6ff9ca262ea382b52b1500e.png_360x360q80.png_.avif"
-                                class="w-18" alt="">
-                            <div class="flex flex-col gap-1">
-                                <div
-                                    class="border-0 h-7 bg-white rounded-none w-40 flex items-center justify-center gap-1 hover:bg-gray-100 transition-colors cursor-pointer">
-                                    <svg class="w-3 h-3 text-gray-800" aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                                        viewBox="0 0 24 24">
-                                        <path
-                                            d="M17.537 12.625a4.421 4.421 0 0 0 2.684 4.047 10.96 10.96 0 0 1-1.384 2.845c-.834 1.218-1.7 2.432-3.062 2.457-1.34.025-1.77-.794-3.3-.794-1.531 0-2.01.769-3.275.82-1.316.049-2.317-1.318-3.158-2.532-1.72-2.484-3.032-7.017-1.27-10.077A4.9 4.9 0 0 1 8.91 6.884c1.292-.025 2.51.869 3.3.869.789 0 2.27-1.075 3.828-.917a4.67 4.67 0 0 1 3.66 1.984 4.524 4.524 0 0 0-2.16 3.805m-2.52-7.432A4.4 4.4 0 0 0 16.06 2a4.482 4.482 0 0 0-2.945 1.516 4.185 4.185 0 0 0-1.061 3.093 3.708 3.708 0 0 0 2.967-1.416Z" />
-                                    </svg>
-                                    <p class="text-[15px] font-medium text-gray-800 m-0">App Store</p>
-                                </div>
-                                <div
-                                    class="border-0 h-7 bg-white rounded-none w-40 flex items-center justify-center gap-1 hover:bg-gray-100 transition-colors cursor-pointer">
-                                    <svg class="w-3 h-3 text-gray-800" aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                                        viewBox="0 0 24 24">
-                                        <path fill-rule="evenodd"
-                                            d="M8.6 5.2A1 1 0 0 0 7 6v12a1 1 0 0 0 1.6.8l8-6a1 1 0 0 0 0-1.6l-8-6Z"
-                                            clip-rule="evenodd" />
-                                    </svg>
-                                    <p class="text-[15px] font-medium text-gray-800 m-0">Google Play</p>
-                                </div>
+                            <div
+                                class="border-0 h-7 bg-white rounded-none w-40 flex items-center justify-center gap-1 hover:bg-gray-100 transition-colors cursor-pointer">
+                                <svg class="w-3 h-3 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    width="30" height="30" fill="currentColor" viewBox="0 0 24 24">
+                                    <path fill-rule="evenodd"
+                                        d="M8.6 5.2A1 1 0 0 0 7 6v12a1 1 0 0 0 1.6.8l8-6a1 1 0 0 0 0-1.6l-8-6Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <p class="text-[15px] font-medium text-gray-800 m-0">Google Play</p>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Top Up ug LazMall - Naka-center na -->
-                <div class="flex justify-center gap-4 w-full mb-6">
-                    <div
-                        class="border-0 bg-white h-[80px] w-[48%] rounded-none shadow-sm hover:shadow-md transition-shadow">
-                        <div class="flex justify-between items-center h-full px-3">
-                            <div class="flex flex-col">
-                                <h1 class="text-lg font-bold text-gray-900 m-0">Top Up</h1>
-                                <h1 class="text-xs mt-1 text-gray-600 m-0">Top Up & Pay Bills</h1>
-                            </div>
-                            <img src="https://img.lazcdn.com/us/domino/bf9403bb-c546-4646-815e-dc3126f8f14c_PH-276-260.png_300x300q80.png_.avif"
-                                class="w-16 h-16" alt="">
-                        </div>
-                    </div>
-                    <div
-                        class="border-0 bg-white h-[80px] w-[48%] rounded-none shadow-sm hover:shadow-md transition-shadow">
-                        <div class="flex justify-between items-center h-full px-3">
-                            <div class="flex flex-col">
-                                <h1 class="text-lg font-bold text-gray-900 m-0">LazMall</h1>
-                                <h1 class="text-xs mt-1 text-gray-600 m-0">Shop Best Brands</h1>
-                            </div>
-                            <img src="https://img.lazcdn.com/us/domino/92419c5c-19b8-4f17-a88c-6c7e3745d9a4_PH-276-260.png_300x300q80.png_.avif"
-                                class="w-16 h-16" alt="">
-                        </div>
-                    </div>
-                </div>
-
-                <h1 class="text-lg font-semibold text-gray-600 mt-6 mb-3">Flash Sale</h1>
-                <div
-                    class="border-0 w-full h-14 bg-white rounded-none shadow-sm flex justify-between items-center px-3">
-                    <div class="flex justify-between items-center w-2/3">
-                        <h1
-                            class="text-[#FF933F] font-semibold cursor-pointer hover:text-[#ED2846] transition-colors m-0 text-sm">
-                            On Sale Now</h1>
-                        <div class="flex gap-2 items-center">
-                            <h1 class="text-gray-700 text-sm m-0">Ending in </h1>
-                            <button
-                                class="border-none bg-[#ED2846] text-white w-8 h-8 rounded-none font-bold hover:scale-105 duration-300 cursor-pointer text-sm">11</button>
-                            <p class="text-sm text-gray-700 m-0">:</p>
-                            <button
-                                class="border-none bg-[#ED2846] text-white w-8 h-8 rounded-none font-bold hover:scale-105 duration-300 cursor-pointer text-sm">26</button>
-                            <p class="text-sm text-gray-700 m-0">:</p>
-                            <button
-                                class="border-none bg-[#ED2846] text-white w-8 h-8 rounded-none font-bold hover:scale-105 duration-300 cursor-pointer text-sm">2023</button>
-                        </div>
-                    </div>
-                    <button
-                        class="text-[#ED2846] border border-[#ED2846] font-semibold h-8 px-3 rounded-none hover:bg-[#ED2846] hover:text-white transition-colors text-xs">SHOP
-                        ALL PRODUCTS</button>
-                </div>
-
-
-                <div class="grid grid-cols-1 lg:grid-cols-6 sm:grid-cols-2 gap-4 mt-4 w-full">
-                    <div v-for="(product, i) in products" :key="product.id"
-                        class="group h-[260px] bg-white rounded-none shadow-sm hover:shadow-xl overflow-hidden transition-all">
-                        <img @click="handleBuy(i)"
-                            class="w-full h-44 object-cover hover:cursor-pointer hover:scale-105 duration-300"
-                            :src="product.image" alt="product image" />
-                        <div class="p-2">
-                            <div class="flex flex-col">
-                                <p
-                                    class="hover:text-[#ED2846] cursor-pointer font-medium text-gray-800 text-sm line-clamp-2 m-0">
-                                    {{ product.name }}</p>
-                                <p class="text-[#ED2846] text-sm font-bold mt-1 m-0">{{ product.price }}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Categories Section -->
-                <h1 class="text-2xl font-semibold text-gray-600 mt-8 mb-3 text-left">Categories</h1>
-                <div
-                    class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-3 w-full h-[400px] bg-white rounded-none shadow-sm p-4">
-                    <div v-for="category in categories" :key="category.id"
-                        class="bg-white rounded-none shadow-sm hover:shadow-md transition-all p-3 h-[150px] flex flex-col items-center justify-center text-center">
-                        <img class="w-20 h-20 object-contain mb-2" :src="category.image" alt="category image" />
-                        <p class="text-gray-800 font-normal text-[15px] leading-tight m-0">
-                            {{ category.name }}
-                        </p>
-                    </div>
-                </div>
-
-                <h1 class="text-lg font-semibold text-gray-600 mt-6 mb-2 text-left">Just For You</h1>
-                <div class="grid grid-cols-1 lg:grid-cols-6 sm:grid-cols-2 gap-4 mt-4 w-full">
-                    <div v-for="(item, i) in JustForYou" :key="item.id"
-                        class="group h-[260px] bg-white rounded-none shadow-sm hover:shadow-xl overflow-hidden transition-all">
-                        <img @click="handleBuy(i)"
-                            class="w-full h-44 object-cover hover:cursor-pointer hover:scale-105 duration-300"
-                            :src="item.image" alt="product image" />
-                        <div class="p-2">
-                            <div class="flex flex-col">
-                                <p
-                                    class="hover:text-[#ED2846] cursor-pointer font-medium text-gray-800 text-sm line-clamp-2 m-0">
-                                    {{ item.name }}</p>
-                                <p class="text-[#ED2846] text-sm font-bold mt-1 m-0">{{ item.price }}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <button
-                    class="text-[#ED2846] border border-[#ED2846] font-semibold h-8 px-3 rounded-none hover:bg-[#ED2846] hover:text-white transition-colors text-md flex items-center justify-center gap-1 mt-6 mx-auto cursor-pointer">
-                    LOAD MORE
-                </button>
-
-                <!-- Modals -->
-                <Modal v-if="showProductModal" :selectedProduct="products[currentIndex]" @close="closeProductModal"
-                    @addTocart="eaddsacart" />
-                <AddModal v-if="addingProduct" @close="closeaddModal" @submitProduct="add" />
-                <Addtocart v-if="currentPage === 'showCart'" :cartitems="cart" />
-
             </div>
+
+            <!-- Top Up ug LazMall - Naka-center na -->
+            <div class="flex justify-center gap-4 w-full mb-6">
+                <div
+                    class="border-0 bg-white h-[80px] w-[48%] rounded-none shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex justify-between items-center h-full px-3">
+                        <div class="flex flex-col">
+                            <h1 class="text-lg font-bold text-gray-900 m-0">Top Up</h1>
+                            <h1 class="text-xs mt-1 text-gray-600 m-0">Top Up & Pay Bills</h1>
+                        </div>
+                        <img src="https://img.lazcdn.com/us/domino/bf9403bb-c546-4646-815e-dc3126f8f14c_PH-276-260.png_300x300q80.png_.avif"
+                            class="w-16 h-16" alt="">
+                    </div>
+                </div>
+                <div
+                    class="border-0 bg-white h-[80px] w-[48%] rounded-none shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex justify-between items-center h-full px-3">
+                        <div class="flex flex-col">
+                            <h1 class="text-lg font-bold text-gray-900 m-0">LazMall</h1>
+                            <h1 class="text-xs mt-1 text-gray-600 m-0">Shop Best Brands</h1>
+                        </div>
+                        <img src="https://img.lazcdn.com/us/domino/92419c5c-19b8-4f17-a88c-6c7e3745d9a4_PH-276-260.png_300x300q80.png_.avif"
+                            class="w-16 h-16" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <h1 class="text-lg font-semibold text-gray-600 mt-6 mb-3">Flash Sale</h1>
+            <div class="border-0 w-full h-14 bg-white rounded-none shadow-sm flex justify-between items-center px-3">
+                <div class="flex justify-between items-center w-2/3">
+                    <h1
+                        class="text-[#FF933F] font-semibold cursor-pointer hover:text-[#ED2846] transition-colors m-0 text-sm">
+                        On Sale Now</h1>
+                    <div class="flex gap-2 items-center">
+                        <h1 class="text-gray-700 text-sm m-0">Ending in </h1>
+                        <button
+                            class="border-none bg-[#ED2846] text-white w-8 h-8 rounded-none font-bold hover:scale-105 duration-300 cursor-pointer text-sm">11</button>
+                        <p class="text-sm text-gray-700 m-0">:</p>
+                        <button
+                            class="border-none bg-[#ED2846] text-white w-8 h-8 rounded-none font-bold hover:scale-105 duration-300 cursor-pointer text-sm">26</button>
+                        <p class="text-sm text-gray-700 m-0">:</p>
+                        <button
+                            class="border-none bg-[#ED2846] text-white w-8 h-8 rounded-none font-bold hover:scale-105 duration-300 cursor-pointer text-sm">2023</button>
+                    </div>
+                </div>
+                <button
+                    class="text-[#ED2846] border border-[#ED2846] font-semibold h-8 px-3 rounded-none hover:bg-[#ED2846] hover:text-white transition-colors text-xs">SHOP
+                    ALL PRODUCTS</button>
+            </div>
+
+
+            <div class="grid grid-cols-1 lg:grid-cols-6 sm:grid-cols-2 gap-4 mt-4 w-full">
+                <div v-for="(product, i) in products" :key="product.id"
+                    class="group h-[260px] bg-white rounded-none shadow-sm hover:shadow-xl overflow-hidden transition-all">
+                    <img @click="handleBuy(i)"
+                        class="w-full h-44 object-cover hover:cursor-pointer hover:scale-105 duration-300"
+                        :src="product.image" alt="product image" />
+                    <div class="p-2">
+                        <div class="flex flex-col">
+                            <p
+                                class="hover:text-[#ED2846] cursor-pointer font-medium text-gray-800 text-sm line-clamp-2 m-0">
+                                {{ product.name }}</p>
+                            <p class="text-[#ED2846] text-sm font-bold mt-1 m-0">{{ product.price }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categories Section -->
+            <h1 class="text-2xl font-semibold text-gray-600 mt-8 mb-3 text-left">Categories</h1>
+            <div
+                class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-3 w-full h-[400px] bg-white rounded-none shadow-sm p-4">
+                <div v-for="category in categories" :key="category.id"
+                    class="bg-white rounded-none shadow-sm hover:shadow-md transition-all p-3 h-[150px] flex flex-col items-center justify-center text-center">
+                    <img class="w-20 h-20 object-contain mb-2" :src="category.image" alt="category image" />
+                    <p class="text-gray-800 font-normal text-[15px] leading-tight m-0">
+                        {{ category.name }}
+                    </p>
+                </div>
+            </div>
+
+            <h1 class="text-lg font-semibold text-gray-600 mt-6 mb-2 text-left">Just For You</h1>
+            <div class="grid grid-cols-1 lg:grid-cols-6 sm:grid-cols-2 gap-4 mt-4 w-full">
+                <div v-for="(item, i) in JustForYou" :key="item.id"
+                    class="group h-[260px] bg-white rounded-none shadow-sm hover:shadow-xl overflow-hidden transition-all">
+                    <img @click="handleBuy(i)"
+                        class="w-full h-44 object-cover hover:cursor-pointer hover:scale-105 duration-300"
+                        :src="item.image" alt="product image" />
+                    <div class="p-2">
+                        <div class="flex flex-col">
+                            <p
+                                class="hover:text-[#ED2846] cursor-pointer font-medium text-gray-800 text-sm line-clamp-2 m-0">
+                                {{ item.name }}</p>
+                            <p class="text-[#ED2846] text-sm font-bold mt-1 m-0">{{ item.price }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button
+                class="text-[#ED2846] border border-[#ED2846] font-semibold h-8 px-3 rounded-none hover:bg-[#ED2846] hover:text-white transition-colors text-md flex items-center justify-center gap-1 mt-6 mx-auto cursor-pointer">
+                LOAD MORE
+            </button>
+
+            <!-- Modals -->
+            <Modal v-if="showProductModal" :selectedProduct="products[currentIndex]" @close="closeProductModal"
+                @addTocart="eaddsacart" />
+            <AddModal v-if="addingProduct" @close="closeaddModal" @submitProduct="add" />
+            <Addtocart v-if="currentPage === 'showCart'" :cartitems="cart" />
+            <Footer />
+
+
         </div>
     </div>
+
 </template>
 
 <script>
 import Addtocart from './Addtocart.vue';
 import Modal from './Modal.vue';
 import AddModal from './AddModal.vue';
+import Footer from './Footer.vue';
 
 export default {
-    components: { Modal, AddModal, Addtocart },
+    components: { Modal, AddModal, Addtocart, Footer },
     props: {
         addingProduct: {
             type: Boolean,
