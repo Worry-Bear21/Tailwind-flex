@@ -21,7 +21,7 @@
                             </svg>
                             <p class="text-white text-xs font-medium m-0">4.8 Rated</p>
                         </div>
-                        <p class="text-white text-xs px-1 mt-1 m-0">Get the Lazada app to enjoy</p>
+                        <p class="text-white text-xs px-1 mt-1 m-0">Get the Lazada app to enjoy!</p>
                         <div class="mt-1">
                             <div class="ml-1 mt-1 flex items-center gap-1">
                                 <img src="https://img.lazcdn.com/g/tps/imgextra/i2/O1CN01n3PMa828kJZVuCbPp_!!6000000007970-2-tps-72-72.png_150x150q80.png_.avif"
