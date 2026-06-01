@@ -93,8 +93,10 @@ export default {
       if (!this.searchbar.trim()) {
         return this.products
       }
-      const query=this.searchbar.toLowerCase().trim();
-      return this.products.filter()
+      const query = this.searchbar.toLowerCase().trim();
+      return this.products.filter(product =>
+        product.name.toLowerCase().includes(query)
+      )
     }
   },
   methods: {
