@@ -3,25 +3,25 @@
 
     <div class="border-b border-gray-100 relative">
       <div class="max-w-7xl mx-auto px-4 flex justify-end items-center py-2 text-[12px]">
-        <a href="#" @click="addModal" class="text-[#ED2846] hover:underline px-2">FEEDBACK</a>
+        <p href="#" @click="addModal" class="text-[#ED2846] hover:underline px-2">FEEDBACK</p>
         <span class="text-gray-300">|</span>
 
-        <a href="#" @click="savemorebtn" class="text-[#666666] hover:underline px-2">
+        <p href="#" @click="savemorebtn" class="text-[#666666] hover:underline px-2">
           SAVE MORE ON APP
-        </a>
+        </p>
         <span class="text-gray-300">|</span>
-        <a href="#" @click="navigate('home')" class="text-[#333333] hover:underline px-2">SELL ON LAZADA</a>
+        <p @click="navigate('home')" class="text-[#333333] hover:underline px-2">SELL ON LAZADA</p>
         <span class="text-gray-300">|</span>
-        <a href="#" @click="custommodalbtn"class="text-[#666666] hover:underline px-2">CUSTOMER CARE</a>
+        <p href="#" @click="custommodalbtn" class="text-[#666666] hover:underline px-2">CUSTOMER CARE</p>
         <span class="text-gray-300">|</span>
-        <a href="#" @click="navigate('showCart')" class="text-[#666666] hover:underline px-2">TRACK MY ORDER</a>
+        <p href="#" @click="navigate('showCart')" class="text-[#666666] hover:underline px-2">TRACK MY ORDER</p>
         <span class="text-gray-300">|</span>
-        <a href="#" class="text-[#666666] hover:underline px-2">LOGIN</a>
+        <p href="#" class="text-[#666666] hover:underline px-2">LOGIN</p>
         <span class="text-gray-300">|</span>
-        <a href="#" class="text-[#666666] hover:underline px-2">SIGNUP</a>
+        <p href="#" class="text-[#666666] hover:underline px-2">SIGNUP</p>
       </div>
 
-      <CustomModal v-if="showCustomModal"class="absolute right-10 top-[100%] mt-1 -translate-x-1/2 z-[9999]"/>
+      <CustomModal v-if="showCustomModal" class="absolute right-10 top-[100%] mt-1 -translate-x-1/2 z-[9999]" />
       <Savemore v-if="showSaveMore" class="absolute left-1/2 top-[100%] mt-1 -translate-x-1/2 z-[9999]" />
     </div>
 
@@ -52,10 +52,10 @@
       </svg>
       <!-- Lazada Loans -->
       <div class="flex items-center gap-3">
-        <a href="#"
+        <p href="#"
           class="bg-gradient-to-r from-[#ED2846] to-[#FF5722] text-white text-[12px] font-bold px-4 py-1.5 rounded-sm hover:shadow-md transition-shadow">
           APPLY NOW <span class="text-[9px] font-normal">WITH ₱</span>
-        </a>
+        </p>
         <span class="text-[#5E2593] font-semibold text-sm flex items-center gap-1">
           <svg width="16" height="16" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M16 0L24 8L16 16L8 8L16 0Z" fill="#FF6A00" />
@@ -75,10 +75,15 @@ import CustomModal from './CustomModal.vue';
 
 export default {
   components: { Savemore, CustomModal },
+  props: {
+    cart: {
+      type: Array
+    }
+  },
   data() {
     return {
       showSaveMore: false,
-      showCustomModal:false,
+      showCustomModal: false,
     };
   },
   methods: {
@@ -88,8 +93,12 @@ export default {
     custommodalbtn() {
       this.showCustomModal = true;
     },
-    addModal() { },
-    navigate(page) { }
+    addModal() {
+      this.$emit('openAddModal')
+    },
+    navigate(page) {
+      this.$emit('goTo',page)
+    }
   }
-};
+}
 </script>
