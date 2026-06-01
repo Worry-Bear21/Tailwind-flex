@@ -121,11 +121,12 @@
 
             <div class="p-4 mb-6 text-lg text-center leading-tight first-letter:capitalize font-medium text-white">
             </div>
+
+            <!-- ✅ Giusab: Gikan sa products -> filteredProducts -->
             <div class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 p-4">
-                <div v-for="(product, i) in products" :key="product.id"
+                <div v-for="(product, i) in filteredProducts" :key="product.id"
                     class="group h-[320px] rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
                     style="background-color: #1a202c;">
-                    <!-- ✅ Gi-usab ang image styles para dili na molapas ug sakto ra ang itsura -->
                     <img @click="handleBuy(i)"
                         class="w-full h-64 object-contain object-center hover:cursor-pointer transition-transform duration-300 group-hover:scale-105 p-2"
                         :src="product.image" alt="product image" />
@@ -160,7 +161,6 @@
                 <div v-for="(item, i) in JustForYou" :key="item.id"
                     class="group h-[270px] rounded-lg shadow-sm hover:shadow-xl overflow-hidden transition-all duration-300 hover:-translate-y-1"
                     style="background-color: #1a202c;">
-                    <!-- ✅ Fixed: object-contain + padding so images fit perfectly, no overflow -->
                     <img @click="handleBuy(i)"
                         class="w-full h-48 object-contain object-center hover:cursor-pointer transition-transform duration-300 group-hover:scale-105 p-2"
                         :src="item.image" alt="product image" />
@@ -200,6 +200,11 @@ export default {
     props: {
         addingProduct: {
             type: Boolean,
+        },
+     
+        searchText: {
+            type: String,
+            default: ''
         }
     },
     data() {
@@ -241,7 +246,7 @@ export default {
                 { id: 4, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9jdV9lbGl0ZXNfYmV3YXJlX2xpZ2h0LmJhZDc5MDZlMGNjNTI4ODJiNTVhMDIxMTY2MzM1YWM3MzEwZmJiYWQucG5n/auto/auto/85/notrim/171523c75e59dad060997c8c8f4f616a.webp', name: 'Dual Berettas | Flora Carnivora', price: '₱59.99' },
                 { id: 5, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9jdV9kdWFsX2VsaXRlc19yYWxseV9saWdodC5iYzhiZWEwNTkzZjUzMWNiN2UxYjdhODlkM2U3NGJkMjhkZDRiNTQyLnBuZw--/auto/auto/85/notrim/12bce52971502759ed24ba269160b9ba.webp', name: 'F85 Rechargeable Turbo Fan 100 Super Strong Wind Speed Function', price: '₱52.99' },
                 { id: 6, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9zcF9kcnlfd29vZF9saWdodC40NTRiZTExNDM0NGE4NTliZTNiZDk0MGE0MDAxYWUxMjk1OWY2ZWMxLnBuZw--/auto/auto/85/notrim/0e51cbd2fac96dfb9ff61c66b7bc5113.webp', name: 'Dual Berettas | Drift Wood', price: '₱129.50' },
-                { id: 7, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9zb190YW5nZXJpbmVfbGlnaHQuYjFlNTI5NGZjYzEwMWRlMGU2NmE0NjY2MTY0NjY5ZGUyYTVhZGUwZC5wbmc-/auto/auto/85/notrim/04b29d291ef1bee40e0a025648b7aaf3.webp', name: 'Dual Berettas | Demolition', price: '₱45.50' },
+                { id: 7, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9jbGFycGFzc19iYW5nZXJpbmVfbGlnaHQuYjFlNTI5NGZjYzEwMWRlMGU2NmE0NjY2MTY0NjY5ZGUyYTVhZGUwZC5wbmc-/auto/auto/85/notrim/04b29d291ef1bee40e0a025648b7aaf3.webp', name: 'Dual Berettas | Demolition', price: '₱45.50' },
                 { id: 8, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9hbl9lbWVyYWxkX2xpZ2h0LjVlMjRmYWY0NjVhZjVlOGQzZjZjOTEzYjMzMjFlZDQ4NDQxZGJkNzMucG5n/auto/auto/85/notrim/efbd2a572d6c2785c8425599a0ebb411.webp', name: 'Dual Berettas | Emerald', price: '₱111.13' },
                 { id: 9, image: 'https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9nc19kdWFsX2JlcmV0dGFzX3RyZWFkX2xpZ2h0LjUxN2MzMTVhYTNmZDM0YWQ5OTViM2YxZDUwNWVlNGE5ODg3ZmNmZmEucG5n/auto/auto/85/notrim/a072047867eed065c0ead976b109df71.webp', name: 'Dual Berettas | Tread', price: '₱95.50' },
                 { id: 10, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9hbl9uYXZ5X2xpZ2h0LmEyYmU0ZDZmODBjZDE1MzE3YzMwYWM2YzA5YTkyNjQyNDMzZWI4MzgucG5n/auto/auto/85/notrim/d303fc9065bb112904cc80fe00806c94.webp', name: "Dual Berettas | Anodized Navy", price: '₱88.00' },
@@ -276,6 +281,16 @@ export default {
                 { id: 39, image: 'https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9hazQ3X2h5ZV9hazQ3X25vdXZlYXVfbGlnaHQuZTVlM2RiMzMxNWNhNWQwNmVjNzcxZDUxMTQ5ZWE3Mjc2ZWM4NGNiOS5wbmc-/auto/auto/85/notrim/d5a186119cdd871cb36324b9394163e0.webp', name: 'AK-47 | Nouveau Rouge', price: '₱129.80' },
                 { id: 40, image: 'https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9nYWxpbGFyX2N1X2dhbGlsX2Vjb19saWdodC5jYjVjYTg0MmM5NDVjMjViNmRiYTk1YTc4MDE2YjYwNDI1MzBkZjAzLnBuZw--/auto/auto/85/notrim/4c9eeecd4836d40f15f93da19eb8f569.webp', name: 'Galil AR | Eco', price: '₱60.00' }
             ]
+        }
+    },
+    computed: {
+        filteredProducts() {
+            if (!this.searchText) {
+                return this.products;
+            }
+            return this.products.filter(product => {
+                return product.name.toLowerCase().includes(this.searchText.toLowerCase());
+            });
         }
     },
     methods: {
