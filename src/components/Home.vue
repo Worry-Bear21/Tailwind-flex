@@ -116,7 +116,7 @@
                 class="p-4 mb-4 text-lg text-center leading-tight first-letter:capitalize font-medium dark:text-gray-100">
             </div>
             <div class=" w-320 grid grid-cols-1 lg:grid-cols-5  sm:grid-cols-2 gap-6 hover:shadow-xl">
-                <div v-for="(product, i) in products" :key="product.id"
+                <div v-for="(product, i) in filteredproducts" :key="product.id"
                     class="group h-[300px] shadow-lg overflow-hidden" style="background-color: #1a202c;">
                     <img @click="handleBuy(i)"
                         class="w-full h-60 object-cover hover:cursor-pointer hover:scale-105 duration-300"
