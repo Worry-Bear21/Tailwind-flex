@@ -14,7 +14,8 @@
         <span class="text-gray-300">|</span>
         <p href="#" @click="custommodalbtn" class="text-[#666666] hover:underline px-2 cursor-pointer">CUSTOMER CARE</p>
         <span class="text-gray-300">|</span>
-        <p href="#" @click="navigate('showCart')" class="text-[#666666] hover:underline px-2 cursor-pointer">TRACK MY ORDER</p>
+        <p href="#" @click="navigate('showCart')" class="text-[#666666] hover:underline px-2 cursor-pointer">TRACK MY
+          ORDER</p>
         <span class="text-gray-300">|</span>
         <p href="#" class="text-[#666666] hover:underline px-2 cursor-pointer">LOGIN</p>
         <span class="text-gray-300">|</span>
@@ -34,7 +35,7 @@
       </div>
 
       <div class="flex-1 flex items-center">
-        <input type="text" placeholder="Search in Lazada"
+        <input v-model="searchbar" type="text" placeholder="Search in Lazada"
           class="w-full bg-[#F5F5F5] px-4 py-2.5 text-[#333333] text-sm focus:outline-none border border-gray-200 rounded-l-sm">
         <button class="bg-[#EE4D2D] text-white px-5 py-2.5 rounded-r-sm hover:bg-[#D44226] transition-colors">
           <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
@@ -84,7 +85,17 @@ export default {
     return {
       showSaveMore: false,
       showCustomModal: false,
+      searchbar: '',
     };
+  },
+  computed: {
+    filteredProducts() {
+      if (!this.searchbar.trim()) {
+        return this.products
+      }
+      const query=this.searchbar.toLowerCase().trim();
+      return this.products.filter()
+    }
   },
   methods: {
     savemorebtn() {
@@ -97,7 +108,7 @@ export default {
       this.$emit('openAddModal')
     },
     navigate(page) {
-      this.$emit('goTo',page)
+      this.$emit('goTo', page)
     }
   }
 }
