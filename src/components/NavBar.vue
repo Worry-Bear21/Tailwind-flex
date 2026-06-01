@@ -3,22 +3,22 @@
 
     <div class="border-b border-gray-100 relative">
       <div class="max-w-7xl mx-auto px-4 flex justify-end items-center py-2 text-[12px]">
-        <p href="#" @click="addModal" class="text-[#ED2846] hover:underline px-2">FEEDBACK</p>
+        <p href="#" @click="addModal" class="text-[#ED2846] hover:underline px-2 cursor-pointer">FEEDBACK</p>
         <span class="text-gray-300">|</span>
 
-        <p href="#" @click="savemorebtn" class="text-[#666666] hover:underline px-2">
+        <p href="#" @click="savemorebtn" class="text-[#666666] hover:underline px-2 cursor-pointer">
           SAVE MORE ON APP
         </p>
         <span class="text-gray-300">|</span>
-        <p @click="navigate('home')" class="text-[#333333] hover:underline px-2">SELL ON LAZADA</p>
+        <p @click="navigate('home')" class="text-[#333333] hover:underline px-2 cursor-pointer">SELL ON LAZADA</p>
         <span class="text-gray-300">|</span>
-        <p href="#" @click="custommodalbtn" class="text-[#666666] hover:underline px-2">CUSTOMER CARE</p>
+        <p href="#" @click="custommodalbtn" class="text-[#666666] hover:underline px-2 cursor-pointer">CUSTOMER CARE</p>
         <span class="text-gray-300">|</span>
-        <p href="#" @click="navigate('showCart')" class="text-[#666666] hover:underline px-2">TRACK MY ORDER</p>
+        <p href="#" @click="navigate('showCart')" class="text-[#666666] hover:underline px-2 cursor-pointer">TRACK MY ORDER</p>
         <span class="text-gray-300">|</span>
-        <p href="#" class="text-[#666666] hover:underline px-2">LOGIN</p>
+        <p href="#" class="text-[#666666] hover:underline px-2 cursor-pointer">LOGIN</p>
         <span class="text-gray-300">|</span>
-        <p href="#" class="text-[#666666] hover:underline px-2">SIGNUP</p>
+        <p href="#" class="text-[#666666] hover:underline px-2 cursor-pointer">SIGNUP</p>
       </div>
 
       <CustomModal v-if="showCustomModal" class="absolute right-10 top-[100%] mt-1 -translate-x-1/2 z-[9999]" />
