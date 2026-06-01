@@ -121,18 +121,23 @@
 
             <div class="p-4 mb-6 text-lg text-center leading-tight first-letter:capitalize font-medium text-white">
             </div>
-            <div class="w-full grid grid-cols-1 lg:grid-cols-5 sm:grid-cols-2 gap-6">
-                <div v-for="(product, i) in filteredproducts" :key="product.id"
+            <div class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 p-4">
+                <div v-for="(product, i) in products" :key="product.id"
                     class="group h-[320px] rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
                     style="background-color: #1a202c;">
+                    <!-- ✅ Gi-usab ang image styles para dili na molapas ug sakto ra ang itsura -->
                     <img @click="handleBuy(i)"
-                        class="w-full h-64 object-cover hover:cursor-pointer transition-transform duration-300 group-hover:scale-105"
+                        class="w-full h-64 object-contain object-center hover:cursor-pointer transition-transform duration-300 group-hover:scale-105 p-2"
                         :src="product.image" alt="product image" />
                     <div class="p-3">
                         <div class="flex flex-col text-white gap-1">
-                            <p class="hover:text-yellow-400 cursor-pointer font-semibold text-sm line-clamp-2">{{
-                                product.name }}</p>
-                            <p class="text-orange-500 text-lg font-bold">{{ product.price }}</p>
+                            <p
+                                class="hover:text-yellow-400 cursor-pointer font-semibold text-sm line-clamp-2 leading-tight">
+                                {{ product.name }}
+                            </p>
+                            <p class="text-orange-500 text-lg font-bold">
+                                {{ product.price }}
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -149,24 +154,27 @@
                 </div>
             </div>
 
+
             <h1 class="text-xl font-bold text-white mt-8 mb-3 text-left">Just For You</h1>
-            <div class="grid grid-cols-1 lg:grid-cols-6 sm:grid-cols-2 gap-5 mt-4 w-full">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-5 mt-4 w-full">
                 <div v-for="(item, i) in JustForYou" :key="item.id"
-                    class="group h-[270px] bg-white rounded-lg shadow-sm hover:shadow-xl overflow-hidden transition-all duration-300 hover:-translate-y-1 border border-gray-100">
+                    class="group h-[270px] rounded-lg shadow-sm hover:shadow-xl overflow-hidden transition-all duration-300 hover:-translate-y-1"
+                    style="background-color: #1a202c;">
+                    <!-- ✅ Fixed: object-contain + padding so images fit perfectly, no overflow -->
                     <img @click="handleBuy(i)"
-                        class="w-full h-48 object-cover hover:cursor-pointer transition-transform duration-300 group-hover:scale-105"
+                        class="w-full h-48 object-contain object-center hover:cursor-pointer transition-transform duration-300 group-hover:scale-105 p-2"
                         :src="item.image" alt="product image" />
                     <div class="p-3">
                         <div class="flex flex-col gap-1">
                             <p
-                                class="hover:text-[#ED2846] cursor-pointer font-medium text-gray-800 text-sm line-clamp-2 m-0">
-                                {{ item.name }}</p>
+                                class="hover:text-[#ED2846] cursor-pointer font-medium text-white text-sm line-clamp-2 m-0">
+                                {{ item.name }}
+                            </p>
                             <p class="text-[#ED2846] text-base font-bold mt-1 m-0">{{ item.price }}</p>
                         </div>
                     </div>
                 </div>
             </div>
-
             <button
                 class="text-[#ED2846] border-2 border-[#ED2846] font-bold h-9 px-5 rounded-md hover:bg-[#ED2846] hover:text-white transition-all duration-200 text-md flex items-center justify-center gap-2 mt-8 mx-auto cursor-pointer shadow-sm hover:shadow-md">
                 LOAD MORE
@@ -227,17 +235,17 @@ export default {
                 { id: 16, name: 'COLOGNE 2016', image: 'https://cdn.csgoskins.gg/public/uih/tournaments/aHR0cHM6Ly9jc2dvc2tpbnMuZ2cvYnVpbGQvYXNzZXRzLzIwMTYtZXNsLW9uZS1jb2xvZ25lLUJQWTJYY0ZWLnBuZw--/auto/auto/85/notrim/7460fe71c3994bc2191b146683b94caf.webp' }
             ],
             JustForYou: [
-                { id: 1, image: 'https://img.lazcdn.com/g/p/194defed22377f9aac92cae67b9e989b.png_200x200q80.png_.avif', name: '5pcs for 100 SHORTS FOR GIRLS & BOYS', price: '₱100.00' },
-                { id: 2, image: 'https://img.lazcdn.com/g/ff/kf/Sa395d4be74404197a957fdd95ab6ce62p.png_720x720q80.png_.webp', name: 'ZHUSHANXIA | Lay & Sleep for Kids', price: '₱1480.00' },
-                { id: 3, image: 'https://img.lazcdn.com/g/p/554430bee6e4a970c3c688688a667201.jpg_200x200q80.jpg_.avif', name: 'S3ik0 5 Japan M0v3ment AUT0MATIC', price: '₱121.00' },
-                { id: 4, image: 'https://img.lazcdn.com/g/ff/kf/Sb81b54aecfdc4badb7dc9bfeef5ad007h.jpg_200x200q80.jpg_.avif', name: 'Muscle Tee for Men Hustle Fit to Medium,Large,XL. 5+1 Free. Premium Cotton Spandex.', price: '₱59.99' },
-                { id: 5, image: 'https://img.lazcdn.com/g/p/b530dfd2c69a2382913d586500c69017.jpg_200x200q80.jpg_.avif', name: 'F85 Rechargeable Turbo Fan 100 Super Strong Wind Speed Function', price: '₱52.99' },
-                { id: 6, image: 'https://img.lazcdn.com/g/p/3177c13acc36a7e4fe077a4b680a6046.jpg_200x200q80.jpg_.avif', name: 'Portable Multifunctional Gas Stove Hiking Picnic Gathering Cassette Stove', price: '₱129.50' },
-                { id: 7, image: 'https://img.lazcdn.com/g/p/cb1c6e4984911690766fdc7ef9ad5d0d.png_200x200q80.png_.avif', name: 'S3ik0 5 Japan M0v3ment AUT0MATIC', price: '₱45.50' },
-                { id: 8, image: 'https://img.lazcdn.com/g/p/3b5cba5f93c14e61b74ee0cb5c7bbac5.jpg_200x200q80.jpg_.avif', name: 'SKJK Fingertip Button Croaking Frog Duck Keychain Plastic With LED Light Frog Croaking Fidget Toy Key Chains Keyboard Switche Keyboard Sound Keyring Office Leisure Entertainment', price: '₱111.13' },
-                { id: 9, image: 'https://img.lazcdn.com/g/p/1f00854183dc53bd46ecb6b74e1aedb9.jpg_200x200q80.jpg_.avif', name: 'Ice Silk Sunscreen Cap UV Resistant Outdoor Full Face Mask Sun Protection Breathability Cooling', price: '₱95.50' },
-                { id: 10, image: 'https://img.lazcdn.com/g/p/8a55546c9ec3dd96d933c9f560479a2e.jpg_200x200q80.jpg_.avif', name: "2024 Korean sports shoes men's running shoes casual breathable shoes", price: '₱88.00' },
-                { id: 11, image: 'https://img.lazcdn.com/g/p/1716a4fa5f4ba219deeea31b0fcb8426.png_170x170q80.png_.avif', name: 'New Anchor Design Home Office Wall Decoration Hanging Clock Battery Operated', price: '₱231.57' },
+                { id: 1, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9kdWFsX2VsaXRlX2JpYmxpY2FsX2FuZ2VsX2xpZ2h0LmEwOTIwZWYxMjI3Y2FhYTEyNzgzMzNmMmI1YjMzMzRiZGM4YTk3NjIucG5n/auto/auto/85/notrim/2757513c4185d957e5f02cdda6793cc2.webp', name: 'Dual Berettas | Angel Eyes', price: '₱100.00' },
+                { id: 2, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9hbV9jcnlzdGFsbGl6ZWRfYmx1ZV9saWdodC45MTI5MjQ3ZTViMDYwYmIzOGI0MGZlNTYxNjIxNGI3MjhmODRlZGQ3LnBuZw--/auto/auto/85/notrim/c39469a3533f0a7032371a5d10c29283.webp', name: 'Dual Berettas | Cobalt Quartz', price: '₱1480.00' },
+                { id: 3, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9jdV9vdmVycGFzc19iYWJ5X2R1YWxpZXNfbGlnaHQuZWUxOTk4YzJkOWRiMjZiMzU0MzBjMjAxMzliODU0YTdiODkwNWE3OC5wbmc-/auto/auto/85/notrim/1aa696b3c6a985ac040a8963462173ea.webp', name: 'Dual Berettas | Sweet Little Angels', price: '₱121.00' },
+                { id: 4, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9jdV9lbGl0ZXNfYmV3YXJlX2xpZ2h0LmJhZDc5MDZlMGNjNTI4ODJiNTVhMDIxMTY2MzM1YWM3MzEwZmJiYWQucG5n/auto/auto/85/notrim/171523c75e59dad060997c8c8f4f616a.webp', name: 'Dual Berettas | Flora Carnivora', price: '₱59.99' },
+                { id: 5, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9jdV9kdWFsX2VsaXRlc19yYWxseV9saWdodC5iYzhiZWEwNTkzZjUzMWNiN2UxYjdhODlkM2U3NGJkMjhkZDRiNTQyLnBuZw--/auto/auto/85/notrim/12bce52971502759ed24ba269160b9ba.webp', name: 'F85 Rechargeable Turbo Fan 100 Super Strong Wind Speed Function', price: '₱52.99' },
+                { id: 6, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9zcF9kcnlfd29vZF9saWdodC40NTRiZTExNDM0NGE4NTliZTNiZDk0MGE0MDAxYWUxMjk1OWY2ZWMxLnBuZw--/auto/auto/85/notrim/0e51cbd2fac96dfb9ff61c66b7bc5113.webp', name: 'Dual Berettas | Drift Wood', price: '₱129.50' },
+                { id: 7, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9zb190YW5nZXJpbmVfbGlnaHQuYjFlNTI5NGZjYzEwMWRlMGU2NmE0NjY2MTY0NjY5ZGUyYTVhZGUwZC5wbmc-/auto/auto/85/notrim/04b29d291ef1bee40e0a025648b7aaf3.webp', name: 'Dual Berettas | Demolition', price: '₱45.50' },
+                { id: 8, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9hbl9lbWVyYWxkX2xpZ2h0LjVlMjRmYWY0NjVhZjVlOGQzZjZjOTEzYjMzMjFlZDQ4NDQxZGJkNzMucG5n/auto/auto/85/notrim/efbd2a572d6c2785c8425599a0ebb411.webp', name: 'Dual Berettas | Emerald', price: '₱111.13' },
+                { id: 9, image: 'https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9nc19kdWFsX2JlcmV0dGFzX3RyZWFkX2xpZ2h0LjUxN2MzMTVhYTNmZDM0YWQ5OTViM2YxZDUwNWVlNGE5ODg3ZmNmZmEucG5n/auto/auto/85/notrim/a072047867eed065c0ead976b109df71.webp', name: 'Dual Berettas | Tread', price: '₱95.50' },
+                { id: 10, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9hbl9uYXZ5X2xpZ2h0LmEyYmU0ZDZmODBjZDE1MzE3YzMwYWM2YzA5YTkyNjQyNDMzZWI4MzgucG5n/auto/auto/85/notrim/d303fc9065bb112904cc80fe00806c94.webp', name: "Dual Berettas | Anodized Navy", price: '₱88.00' },
+                { id: 11, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9oeV92aW5lc19saWdodC45YjRlMjNmYjJlYjRlNTM0Zjg1ZDJiYjIyNjg0ZTllMjMwOTY3MTI2LnBuZw--/auto/auto/85/notrim/3b0324f65c04c0d6e1e2283d16d1c36d.webp', name: 'Dual Berettas | Briar', price: '₱231.57' },
                 { id: 12, image: 'https://img.lazcdn.com/g/ff/kf/Sac991f3a795348928dc5152a68d10690y.jpg_200x200q80.jpg_.avif', name: 'BEI JESS | Multifunctional Kids Electronic Keyboard with Microphone', price: '₱510.08' },
                 { id: 13, image: 'https://img.lazcdn.com/g/p/2af0382000fd8faeaf45ace66d97eafa.jpg_170x170q80.jpg_.avif', name: 'Buy 1 take 1 armor wax coat for matte and glossy free sponge and microfiber towel 60ml', price: '₱59.00' },
                 { id: 14, image: 'https://img.lazcdn.com/g/p/e50ad6aa24b54576fa8a58ebd340cf42.jpg_170x170q80.jpg_.avif', name: 'Ear Piercer Painless Disposable Aseptic Ear Piercing Tool Kit', price: '₱21.67' },
