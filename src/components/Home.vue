@@ -64,7 +64,6 @@
                 </div>
             </div>
 
-            <!-- Top Up ug LazMall - Naka-center na -->
             <div class="flex justify-center gap-4 w-full mb-6">
                 <div
                     class="border-0 bg-white h-[80px] w-[48%] rounded-none shadow-sm hover:shadow-md transition-shadow">
@@ -131,7 +130,7 @@
                 </div>
             </div>
 
-            <!-- Categories Section -->
+            
             <h1 class="text-2xl font-semibold text-gray-600 mt-8 mb-3 text-left">Categories</h1>
             <div
                 class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-3 w-full h-[400px] bg-white rounded-none shadow-sm p-4">
@@ -166,12 +165,9 @@
                 class="text-[#ED2846] border border-[#ED2846] font-semibold h-8 px-3 rounded-none hover:bg-[#ED2846] hover:text-white transition-colors text-md flex items-center justify-center gap-1 mt-6 mx-auto cursor-pointer">
                 LOAD MORE
             </button>
-
-            <!-- Modals -->
             <Modal v-if="showProductModal" :selectedProduct="products[currentIndex]" @close="closeProductModal"
                 @addTocart="eaddsacart" />
             <AddModal v-if="addingProduct" @close="closeaddModal" @submitProduct="add" />
-            <Addtocart v-if="currentPage === 'showCart'" :cartitems="cart" />
             <Footer />
 
 

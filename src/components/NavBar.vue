@@ -1,22 +1,18 @@
 <template>
   <div class="font-[Arial] bg-white fixed top-0 left-0 w-full z-[999] shadow-sm">
-    <!-- Top Links Bar - Gihimo ni nga RELATIVE para masundan sa Savemore -->
+
     <div class="border-b border-gray-100 relative">
       <div class="max-w-7xl mx-auto px-4 flex justify-end items-center py-2 text-[12px]">
         <a href="#" @click="addModal" class="text-[#ED2846] hover:underline px-2">FEEDBACK</a>
         <span class="text-gray-300">|</span>
-        <!-- 🟢 BUTTON NGA I-CLICKAN -->
-        <a 
-          href="#" 
-          @click="savemorebtn" 
-          class="text-[#333333] hover:underline px-2 font-semibold"
-        >
+
+        <a href="#" @click="savemorebtn" class="text-[#666666] hover:underline px-2">
           SAVE MORE ON APP
         </a>
         <span class="text-gray-300">|</span>
         <a href="#" @click="navigate('home')" class="text-[#333333] hover:underline px-2">SELL ON LAZADA</a>
         <span class="text-gray-300">|</span>
-        <a href="#" class="text-[#666666] hover:underline px-2">CUSTOMER CARE</a>
+        <a href="#" @click="custommodalbtn"class="text-[#666666] hover:underline px-2">CUSTOMER CARE</a>
         <span class="text-gray-300">|</span>
         <a href="#" @click="navigate('showCart')" class="text-[#666666] hover:underline px-2">TRACK MY ORDER</a>
         <span class="text-gray-300">|</span>
@@ -25,35 +21,39 @@
         <a href="#" class="text-[#666666] hover:underline px-2">SIGNUP</a>
       </div>
 
-      <!-- ✅ DINHI GIBUTANG ANG SAVEMORE, SULOD SA RELATIVE DIV -->
-      <Savemore 
-        v-if="showSaveMore" 
-        class="absolute left-1/2 top-[100%] mt-1 -translate-x-1/2 z-[9999]" 
-      />
+      <CustomModal v-if="showCustomModal"class="absolute right-10 top-[100%] mt-1 -translate-x-1/2 z-[9999]"/>
+      <Savemore v-if="showSaveMore" class="absolute left-1/2 top-[100%] mt-1 -translate-x-1/2 z-[9999]" />
     </div>
 
 
     <div class="max-w-7xl mx-auto px-4 py-3 flex items-center gap-6">
-      <!-- Logo -->
+
       <div class="flex items-center w-[120px]">
-        <img src="https://img.lazcdn.com/g/tps/images/ims-web/TB19SB7aMFY.1VjSZFnXXcFHXXa.png" alt="Lazada Logo" class="w-full h-auto">
+        <img src="https://img.lazcdn.com/g/tps/images/ims-web/TB19SB7aMFY.1VjSZFnXXcFHXXa.png" alt="Lazada Logo"
+          class="w-full h-auto">
       </div>
-      <!-- Search Bar -->
+
       <div class="flex-1 flex items-center">
-        <input type="text" placeholder="Search in Lazada" class="w-full bg-[#F5F5F5] px-4 py-2.5 text-[#333333] text-sm focus:outline-none border border-gray-200 rounded-l-sm">
+        <input type="text" placeholder="Search in Lazada"
+          class="w-full bg-[#F5F5F5] px-4 py-2.5 text-[#333333] text-sm focus:outline-none border border-gray-200 rounded-l-sm">
         <button class="bg-[#EE4D2D] text-white px-5 py-2.5 rounded-r-sm hover:bg-[#D44226] transition-colors">
-          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-            <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+            viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-width="2"
+              d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
           </svg>
         </button>
       </div>
       <!-- Cart Icon -->
-      <svg class="w-6 h-6 text-[#333333] hover:text-[#EE4D2D] cursor-pointer transition-colors" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
+      <svg class="w-6 h-6 text-[#333333] hover:text-[#EE4D2D] cursor-pointer transition-colors" aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
       </svg>
       <!-- Lazada Loans -->
       <div class="flex items-center gap-3">
-        <a href="#" class="bg-gradient-to-r from-[#ED2846] to-[#FF5722] text-white text-[12px] font-bold px-4 py-1.5 rounded-sm hover:shadow-md transition-shadow">
+        <a href="#"
+          class="bg-gradient-to-r from-[#ED2846] to-[#FF5722] text-white text-[12px] font-bold px-4 py-1.5 rounded-sm hover:shadow-md transition-shadow">
           APPLY NOW <span class="text-[9px] font-normal">WITH ₱</span>
         </a>
         <span class="text-[#5E2593] font-semibold text-sm flex items-center gap-1">
@@ -71,20 +71,25 @@
 
 <script>
 import Savemore from './Savemore.vue';
+import CustomModal from './CustomModal.vue';
 
 export default {
-  components: { Savemore },
+  components: { Savemore, CustomModal },
   data() {
     return {
-      showSaveMore: false // ✅ Kini ang kontrol
+      showSaveMore: false,
+      showCustomModal:false,
     };
   },
   methods: {
     savemorebtn() {
-      this.showSaveMore = !this.showSaveMore; // ✅ Baliktan ang bili, dili kanunay true
+      this.showSaveMore = true;
     },
-    addModal() {},
-    navigate(page) {}
+    custommodalbtn() {
+      this.showCustomModal = true;
+    },
+    addModal() { },
+    navigate(page) { }
   }
 };
 </script>

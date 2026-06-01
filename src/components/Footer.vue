@@ -17,7 +17,6 @@
                 </div>
             </div>
 
-            <!-- Links & App Download -->
             <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6 text-sm">
                 <div>
                     <h4 class="font-semibold text-gray-800 mb-2">Customer Care</h4>
@@ -63,7 +62,7 @@
                 </div>
             </div>
 
-            <!-- Payment & Delivery & Verified -->
+
             <div
                 class="grid grid-cols-1 md:grid-cols-3 gap-4 items-center py-4 border-t border-b border-gray-200 mb-6 bg-white w-full h-40">
                 <div>
@@ -115,7 +114,7 @@
                 </div>
             </div>
 
-            <!-- Long Text / Information Section -->
+
             <div class="grid grid-cols-1 md:grid-cols-5 gap-6 text-xs text-gray-600 leading-relaxed">
                 <div class="md:col-span-1">
                     <h5 class="font-semibold text-gray-800 mb-1">The Top Online Shopping Experience with Lazada
@@ -219,32 +218,259 @@
                         shop more, save more, and personal convenience.</p>
                 </div>
                 <div class="md:col-span-1">
-                    <h5 class="font-semibold text-gray-800 mb-1">Top Brands and Pages</h5>
+                    <h5 class="font-semibold text-gray-800 mb-1 uppercase">Top Brands and Pages</h5>
                     <ul class="space-y-0.5">
-                        <li><a href="#" class="hover:text-blue-600">MOBILES & TABLETS</a>  <br>
-                            Apple , Cherry Mobile , Asus , Samsung , Starmobile , Blackberry , Elephone , Gionee , Sony
-                            , LG</li>
-                        <li><a href="#" class="hover:text-blue-600">FASHION</a></li>
-                        <li><a href="#" class="hover:text-blue-600">ELECTRONICS</a></li>
-                        <li><a href="#" class="hover:text-blue-600">HOME & LIVING</a></li>
-                        <li><a href="#" class="hover:text-blue-600">HEALTH & BEAUTY</a></li>
-                        <li><a href="#" class="hover:text-blue-600">BABY & TOYS</a></li>
-                        <li><a href="#" class="hover:text-blue-600">SPORTS & OUTDOORS</a></li>
-                        <li><a href="#" class="hover:text-blue-600">GROCERIES</a></li>
-                        <li><a href="#" class="hover:text-blue-600">PET SUPPLIES</a></li>
+                        <h1 class="hover:text-blue-600 font-semibold">MOBILES & TABLETS</h1>
+                        <div class="flex grid grid-cols-3">
+                            <li class="hover:underline cursor-pointer text-xs">Apple,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Cherry Mobile,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Asus,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Samsung,</li>
+                            <li class="hover:underline cursor-pointer text-xs">StarMobile, <br></li>
+                            <li class="hover:underline cursor-pointer text-xs">Blackberry,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Elephone,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Gione,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Sony,</li>
+                            <li class="hover:underline cursor-pointer text-xs">LG</li>
+
+                        </div>
+                        <h1 class="hover:text-blue-600 font-semibold">COMPUTER & LAPTOPS</h1>
+                        <div class="flex grid grid-cols-3">
+                            <li class="hover:underline cursor-pointer text-xs">Toshibas,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Dell,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Microsoft,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Western Digital,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Trascend,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Logitech,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Razer,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Kingston,</li>
+                            <li class="hover:underline cursor-pointer text-xs">A4tech,</li>
+
+                        </div>
+                        <h1 class="hover:text-blue-600 font-semibold">ELECTRONICS</h1>
+                        <div class="flex grid grid-cols-3">
+                            <li class="hover:underline cursor-pointer text-xs">VR Box,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Ace,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Marshall,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Philips,</li>
+                            <li class="hover:underline cursor-pointer text-xs">TCL,</li>
+                            <li class="hover:underline cursor-pointer text-xs"> The Platinum,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Sennheiser,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Ipega,</li>
+                        </div>
+                        <h1 class="hover:text-blue-600 font-semibold">CAMERAS</h1>
+                        <div class="flex grid grid-cols-3">
+                            <li class="hover:underline cursor-pointer text-xs">Sony,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Panasonic,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Fujifilm,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Canon,</li>
+                            <li class="hover:underline cursor-pointer text-xs">GoPro,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Trascend,</li>
+                            <li class="hover:underline cursor-pointer text-xs">SJCAM,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Yunteng,</li>
+                        </div>
+                        <h1 class="hover:text-blue-600 font-semibold">HOME APPLIANCES</h1>
+                        <div class="flex grid grid-cols-3">
+                            <li class="hover:underline cursor-pointer text-xs">Strandard,</li>
+                            <li class="hover:underline cursor-pointer text-xs">American Home,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Oster,</li>
+                            <li class="hover:underline cursor-pointer text-xs">LG,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Carrier,</li>
+                            <li class="hover:underline cursor-pointer text-xs">La Germenia,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Koppel</li>
+                            <li class="hover:underline cursor-pointer text-xs">Hanabishi,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Singer,</li>
+                            <li class="hover:underline cursor-pointer text-xs">American Heritage,</li>
+                        </div>
+                        <h1 class="hover:text-blue-600 font-semibold">HOME LIVING</h1>
+                        <div class="flex grid grid-cols-3">
+                            <li class="hover:underline cursor-pointer text-xs">Ikea,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Uratex,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Wilton,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Cofta,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Stanley,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Mandaue,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Firefly</li>
+                            <li class="hover:underline cursor-pointer text-xs">Dewalt,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Bosch,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Philflex,</li>
+                        </div>
+                        <h1 class="hover:text-blue-600 font-semibold">MOTHER & BABY</h1>
+                        <div class="flex grid grid-cols-3">
+                            <li class="hover:underline cursor-pointer text-xs">Avent,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Fisher Price,</li>
+                            <li class="hover:underline cursor-pointer text-xs">MamyPoko,</li>
+                            <li class="hover:underline cursor-pointer text-xs">GoodBaby,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Huggies,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Tiny Buds,</li>
+                            <li class="hover:underline cursor-pointer text-xs">IRDY</li>
+                            <li class="hover:underline cursor-pointer text-xs">Enfant,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Graco,</li>
+                        </div>
+                        <h1 class="hover:text-blue-600 font-semibold">HEALTH & BEAUTY</h1>
+                        <div class="flex grid grid-cols-3">
+                            <li class="hover:underline cursor-pointer text-xs">Luxxe,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Gillete,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Revlon,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Olay,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Sheisido,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Mabylline,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Rimmel London</li>
+                            <li class="hover:underline cursor-pointer text-xs">Benetton,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Colourpop,</li>
+                        </div>
+                        <h1 class="hover:text-blue-600 font-semibold">LOAD ONLINE</h1>
+                        <div class="flex grid grid-cols-3">
+                            <li class="hover:underline cursor-pointer text-xs">Globe,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Smart,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Talk N' Text,</li>
+
+                        </div>
+                        <h1 class="hover:text-blue-600 font-semibold">SPECIAL PROMOTIONS</h1>
+                        <div class="flex grid grid-cols-3">
+                            <li class="hover:underline cursor-pointer text-xs">Lazada styles,</li>
+                            <li class="hover:underline cursor-pointer text-xs">LazBeauty,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Lazada 9.9 Sale,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Lazada 5.5 Sale,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Lazada 2.2 Sale,</li>
+                            <li class="hover:underline cursor-pointer text-xs">3.3 Birthday Opening Sale ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Lazada 4.4 Lowest Price Sale ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Lazada Motors Showroom</li>
+
+                        </div>
+                        <h1 class="hover:text-blue-600 font-semibold uppercase">Shop worldwide with AliExpress</h1>
+                        <div class="flex grid grid-cols-3">
+                            <li class="hover:underline cursor-pointer text-xs">Russia ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Spain ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">France ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Germany ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Poland,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Brazil </li>
+                            <li class="hover:underline cursor-pointer text-xs">Saudi Arabia</li>
+                        </div>
+                        <h1 class="hover:text-blue-600 font-semibold uppercase">Shop worldwide with Daraz</h1>
+                        <div class="flex grid grid-cols-3">
+                            <li class="hover:underline cursor-pointer text-xs">Pakistan ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Bangladesh ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Sri Lanka ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Myanmar ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Nepal</li>
+                        </div>
                     </ul>
                 </div>
                 <div class="md:col-span-1">
-                    <h5 class="font-semibold text-gray-800 mb-1">Vouchers & More</h5>
+
                     <ul class="space-y-0.5">
-                        <li><a href="#" class="hover:text-blue-600">VOUCHERS</a></li>
-                        <li><a href="#" class="hover:text-blue-600">COUPONS</a></li>
-                        <li><a href="#" class="hover:text-blue-600">FLASH SALE</a></li>
-                        <li><a href="#" class="hover:text-blue-600">TOP UP</a></li>
-                        <li><a href="#" class="hover:text-blue-600">REWARDS</a></li>
-                        <li><a href="#" class="hover:text-blue-600">SELLER CENTER</a></li>
-                        <li><a href="#" class="hover:text-blue-600">AFFILIATE PROGRAM</a></li>
-                        <li><a href="#" class="hover:text-blue-600">HELP CENTER</a></li>
+                        <h1 class="hover:text-blue-600 font-semibold uppercase">WATCHES</h1>
+                        <div class="flex grid grid-cols-3">
+                            <li class="hover:underline cursor-pointer text-xs">Casio ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Invicta ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Michael Kors ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Fossil ,</li>
+                        </div>
+                        <h1 class="hover:text-blue-600 font-semibold uppercase">FASHION</h1>
+                        <div class="flex grid grid-cols-3">
+                            <li class="hover:underline cursor-pointer text-xs">Elena ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Lacoste ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Forever 21 ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Safety Jogger ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Guess ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Penshoppe ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Mango ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Kate Spade ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Michael Kors ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Vans ,</li>
+                        </div>
+                        <h1 class="hover:text-blue-600 font-semibold uppercase">TRAVEL & LUGGAGE</h1>
+                        <div class="flex grid grid-cols-3">
+                            <li class="hover:underline cursor-pointer text-xs">High Sierra ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Pilot ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">American Tourister ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Anello ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Halos ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Tigernu ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Rhinox ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Thule ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Case Logic ,</li>
+                        </div>
+                        <h1 class="hover:text-blue-600 font-semibold uppercase">SPORTS & OUTDOORS</h1>  
+                        <div class="flex grid grid-cols-3">
+                            <li class="hover:underline cursor-pointer text-xs">Coleman ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Mikasa ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Li-ning ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Shimano ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">XIX ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Lagalog ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Spalding ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Giant ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Twins ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Wondercore ,</li>
+                        </div>
+                        <h1 class="hover:text-blue-600 font-semibold uppercase">MOTORS</h1>  
+                        <div class="flex grid grid-cols-3">
+                            <li class="hover:underline cursor-pointer text-xs">Hella ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">MT ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Origine ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">LS2 ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">GIVI ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Pioneer ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Osram ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Sparco ,</li>
+                        </div>
+                        <h1 class="hover:text-blue-600 font-semibold uppercase">MEDIA GAMES & MUSIC</h1>  
+                        <div class="flex grid grid-cols-3">
+                            <li class="hover:underline cursor-pointer text-xs">Fernando ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Epiphone ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">D&D ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Hard Copy ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Yamaha ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Davis ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Thomson ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Behringer ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Mozart ,</li>
+                        </div>
+                        <h1 class="hover:text-blue-600 font-semibold uppercase">GROCERIES</h1>  
+                        <div class="flex grid grid-cols-3">
+                            <li class="hover:underline cursor-pointer text-xs">Nestle ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Samyang ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Kracie ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Sakura ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Lotte ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Nescafe ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Jack Daniel's ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Nestea ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Nutella ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Healthy Tropics ,</li>
+                        </div>
+                        <h1 class="hover:text-blue-600 font-semibold uppercase">PETS</h1>  
+                        <div class="flex grid grid-cols-3">
+                            <li class="hover:underline cursor-pointer text-xs">Puppy Love ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Pedigree ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Friskies ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Acana ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Vitality ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Royal Canin ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Petpals ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">St. Roche ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Papi ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Me-O ,</li>
+                        </div>
+                        <h1 class="hover:text-blue-600 font-semibold uppercase">TOYS</h1>  
+                        <div class="flex grid grid-cols-3">
+                            <li class="hover:underline cursor-pointer text-xs">Peppa Pig ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Funko Pop ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Pokemon ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Intex ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Gundam ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Zootopia , </li>
+                            <li class="hover:underline cursor-pointer text-xs">Shopkins ,</li>
+                            <li class="hover:underline cursor-pointer text-xs"> Leap Frog ,</li>
+                            <li class="hover:underline cursor-pointer text-xs">Hot Wheels</li>
+                        </div>
+                        <h1 class="hover:text-blue-600 font-semibold uppercase">Seller Tools</h1>  
+                        <div class="flex grid grid-cols-3">
+                            <li class="hover:underline cursor-pointer text-xs">Piccopilot AI Fashion Model</li>
+                        </div>
                     </ul>
                 </div>
             </div>
