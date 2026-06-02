@@ -7,7 +7,7 @@
     <Home v-if="currentPage === 'home'" :addingProduct="showaddModal" :searchbar="searchbar" @close="closeAddModal"
       @addTocart="addToCart" @addToorder="addToOrder" />
 
-    <Addtocart v-if="currentPage === 'showCart'" :cartitems="cart" />
+    <Addtocart v-if="currentPage === 'showCart'" :cartitems="cart"  @addToorder="addToOrder"  />
     <Order v-if="currentPage === 'showOrder'" :orderlist="order" />
   </div>
 </template>
@@ -30,7 +30,7 @@ export default {
       num: "",
       cart: [],
       searchbar: '',
-      order: []
+      order: [],
 
     }
   },
