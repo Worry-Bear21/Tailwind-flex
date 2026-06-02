@@ -1,53 +1,98 @@
 <template>
   <div>
+    <Navbar 
+      @openAddModal="showaddModal = true" 
+      @goTo="changePage" 
+      @handleSearch="handleSearch" 
+      :cart="cart" 
+    />
 
-    <NavBar @openAddModal="showAddModal" @goTo="changePage" @search="handleSearch" :cart="cart" />
+    <Home 
+      v-if="currentPage === 'home'" 
+      :addingProduct="showaddModal" 
+      :searchbar="searchbar"
+      @addToCart="addToCart" 
+      @addToOrder="addToOrder" 
+      @closeAddModal="closeAddModal"
+    />
 
+    <!-- ✅ GIHIMO NAKO NGA showCart PARA PAREHAS SA IMONG NAVBAR -->
+    <Addtocart 
+      v-if="currentPage === 'showCart'" 
+      :cartitems="cart" 
+      @addToOrder="addToOrder" 
+      @removeFromCart="removeFromCart"
+    />
 
-    <Home v-if="currentPage === 'home'" :addingProduct="showaddModal" :searchbar="searchbar" @close="closeAddModal"
-      @addTocart="addToCart" @addToorder="addToOrder" />
+    <Order 
+      v-if="currentPage === 'showOrder'" 
+      :orderlist="order"
+    />
 
-    <Addtocart v-if="currentPage === 'showCart'" :cartitems="cart"  @addToorder="addToOrder"  />
-    <Order v-if="currentPage === 'showOrder'" :orderlist="order" />
+    <CustomModal 
+      v-if="showaddModal" 
+      @closeAddModal="closeAddModal" 
+      @submitProduct="submitProduct" 
+    />
   </div>
 </template>
 
 <script>
-import NavBar from './components/NavBar.vue'
+import Navbar from './components/Navbar.vue'
 import Home from './components/Home.vue'
-import Addtocart from './components/Addtocart.vue';
-import Order from './components/Order.vue';
-
+import Addtocart from './components/Addtocart.vue'
+import Order from './components/Order.vue'
+import CustomModal from './components/CustomModal.vue'
 
 export default {
-  components: { NavBar, Home, Addtocart, Order },
-
-  data() {
-    return {
+  components: { Navbar, Home, Addtocart, Order, CustomModal },
+  data(){
+    return{
       showaddModal: false,
-      currentPage: 'home',
-      display: "0",
+      currentPage: 'home', // default nga panid
+      display: "",
       num: "",
       cart: [],
-      searchbar: '',
       order: [],
-
+      searchbar: '',
     }
   },
   methods: {
-    addToOrder(product) {
-      this.order.push({ ...product })
-    },
     addToCart(product) {
-      this.cart.push({ ...product })
+      const naaNa = this.cart.find(item => item.id === product.id);
+      if (!naaNa) {
+        this.cart.push({ ...product });
+        alert('✅ Gidugang sa Cart!');
+      } else {
+        alert('⚠️ Naa na ni sa Cart!');
+      }
     },
-    showAddModal() {
-      this.showaddModal = true;
+
+    removeFromCart(id) {
+      this.cart = this.cart.filter(item => item.id !== id)
     },
+
+    addToOrder(products) {
+      const items = Array.isArray(products) ? products : [products];
+      items.forEach(item => {
+        this.order.push({ ...item, orderDate: new Date().toLocaleDateString() });
+      });
+      this.cart = [];
+      this.currentPage = 'showOrder';
+      alert('🎉 Order Successful!');
+    },
+
+    submitProduct(product){
+      this.addToCart(product);
+      this.closeAddModal();
+    },
+
     closeAddModal() {
       this.showaddModal = false;
     },
+
     changePage(page) {
+      console.log('Gibalhin sa:', page); // Makita nimo sa console
       this.currentPage = page;
     },
 
