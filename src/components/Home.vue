@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-gray-900 min-h-screen w-screen p-4 sm:p-8 mt-[100px]">
+    <div class="bg-gray-900 min-h-screen w-screen p-4 sm:p-8 mt-[145px]">
         <div class="max-w-7xl w-full mx-auto">
 
             <div class="flex justify-center flex-row gap-4 mb-8 w-full">
@@ -185,18 +185,22 @@
             <AddModal v-if="addingProduct" @close="closeaddModal" @submitProduct="add" />
             <Footer />
 
+
+
         </div>
     </div>
 </template>
 
 <script>
 import Addtocart from './Addtocart.vue';
+import Order from './Order.vue';
 import Modal from './Modal.vue';
 import AddModal from './AddModal.vue';
 import Footer from './Footer.vue';
 
+
 export default {
-    components: { Modal, AddModal, Addtocart, Footer },
+    components: { Modal, AddModal, Addtocart, Footer, Order },
     props: {
         addingProduct: {
             type: Boolean,
@@ -209,11 +213,13 @@ export default {
     },
     data() {
         return {
+            showOrder: false,
             currentIndex: 0,
             showProductModal: false,
             currentPage: 'home',
             showAddModal: false,
             cart: [],
+            order: [],
             products: [
                 { id: 1, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9tNGExX2N1X200YTRfdHJhaW5faGVsbF9saWdodC5iYTdlZjU2NjJiZDE5NTk3NjY1NmFiMjgzODhlOGEzZTY2Yzg5MDIyLnBuZw--/auto/auto/85/notrim/01666860b0f8e07a09071f023f08e062.webp', name: 'M4A4 | Hellish', price: '₱639.99', },
                 { id: 2, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9hd3BfYXdwX2xvbmdkb2dfbGlnaHQuZDJkNmRkMzk5MjU3OTc3OTBmNWM3NGE5YjY2ZjEwMjQyYzliODkyYS5wbmc-/auto/auto/85/notrim/d8e26a7dc643e3d0f073bcb5ab1999b2.webp', name: 'AWP | LongDog', price: '₱2204.66', },
@@ -288,7 +294,7 @@ export default {
             if (!this.searchbar.trim()) {
                 return this.products;
             }
-            const query = this.searchbar.toLocaleLowerCase().trim();
+            const query = this.searchbar.toLowerCase().trim();
             return this.products.filter(product =>
                 product.name.toLowerCase().includes(query)
             )
@@ -310,6 +316,9 @@ export default {
         },
         eaddsacart(product) {
             this.$emit('addTocart', product);
+        },
+        eaddsaorder(product) {
+            this.$emit('Order', product)
         }
     }
 };

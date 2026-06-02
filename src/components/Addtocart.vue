@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-200 w-full min-h-screen p-8 sm:p-16 dark:bg-gray-900 mt-10">
+  <div class="bg-gray-200 w-full min-h-screen p-8 sm:p-16 dark:bg-gray-900 mt-30">
 
     <div class="max-w-7xl mx-auto mb-10">
       <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-6">My Cart</h2>
@@ -31,8 +31,8 @@
               </button>
               <button
                 class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-all hover:scale-105 duration-300 cursor-pointer shadow-sm hover:shadow-md"
-                @click="buyNow(item)">
-                Buy Now
+                @click="addOrder">
+                Checkout
               </button>
             </div>
           </div>
@@ -54,6 +54,11 @@ export default {
     cartitems: {
       type: Array,
 
+    }
+  },
+  methods:{
+    addOrder(){
+      this.$emit('Order',this.cartitems);
     }
   }
 }

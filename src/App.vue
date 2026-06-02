@@ -4,10 +4,11 @@
     <NavBar @openAddModal="showAddModal" @goTo="changePage" @search="handleSearch" :cart="cart" />
 
 
-    <Home v-if="currentPage === 'home'" :addingProduct="showaddModal" :searchbar="searchbar"
-      @close="closeAddModal" @addTocart="addToCart" />
+    <Home v-if="currentPage === 'home'" :addingProduct="showaddModal" :searchbar="searchbar" @close="closeAddModal"
+      @addTocart="addToCart" @addToorder="addToOrder" />
 
     <Addtocart v-if="currentPage === 'showCart'" :cartitems="cart" />
+    <Order v-if="currentPage === 'showOrder'" :orderlist="order" />
   </div>
 </template>
 
@@ -15,9 +16,11 @@
 import NavBar from './components/NavBar.vue'
 import Home from './components/Home.vue'
 import Addtocart from './components/Addtocart.vue';
+import Order from './components/Order.vue';
+
 
 export default {
-  components: { NavBar, Home, Addtocart },
+  components: { NavBar, Home, Addtocart, Order },
 
   data() {
     return {
@@ -26,11 +29,15 @@ export default {
       display: "0",
       num: "",
       cart: [],
-      searchbar:''
-      
+      searchbar: '',
+      order: []
+
     }
   },
   methods: {
+    addToOrder(product) {
+      this.order.push({ ...product })
+    },
     addToCart(product) {
       this.cart.push({ ...product })
     },

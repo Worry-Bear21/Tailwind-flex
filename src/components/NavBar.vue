@@ -1,4 +1,4 @@
- <template>
+<template>
   <div class="font-[Arial] bg-[#1a202c] fixed top-0 left-0 w-full z-[999] shadow-lg">
 
     <div class="border-b border-gray-700 relative">
@@ -27,9 +27,8 @@
         </p>
         <span class="text-gray-600">|</span>
 
-        <p @click="navigate('showCart')"
-          class="text-gray-300 hover:text-white hover:underline px-2 cursor-pointer transition-colors duration-200">
-          TRACK MY ORDER
+        <p @click="navigate('showOrder')" class="text-gray-300 hover:text-white hover:underline px-2 cursor-pointer transition-colors duration-200">
+          ORDER HISTORY
         </p>
         <span class="text-gray-600">|</span>
 
@@ -53,13 +52,14 @@
     <div class="max-w-7xl mx-auto px-4 py-4 flex items-center gap-6">
       <!-- Logo -->
       <div class="flex items-center w-[120px]">
-        <img src="https://tse1.mm.bing.net/th/id/OIP.aV2au23ZP-jyEmJz0rDjKwHaG2?pid=ImgDet&w=474&h=438&rs=1&o=7&rm=3" alt="Lazada Logo" class="w-full h-auto object-contain">
+        <img src="https://tse1.mm.bing.net/th/id/OIP.aV2au23ZP-jyEmJz0rDjKwHaG2?pid=ImgDet&w=474&h=438&rs=1&o=7&rm=3"
+          alt="Lazada Logo" class="w-full h-auto object-contain">
       </div>
 
       <!-- Search Bar -->
       <div class="flex-1 flex items-center">
-        
-        <input v-model="searchbar" @change="delsearch" type="text" placeholder="Search in Lazada" 
+
+        <input v-model="searchbar" @input="delsearch" type="text" placeholder="Search in Lazada"
           class="w-full bg-gray-800 text-gray-200 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#EE4D2D]/40 border border-gray-700 rounded-l-lg transition-all placeholder:text-gray-400">
         <button
           class="bg-[#EE4D2D] text-white px-5 py-2.5 rounded-r-lg hover:bg-[#D44226] hover:shadow-md transition-all duration-200">
@@ -114,12 +114,12 @@ export default {
     return {
       showSaveMore: false,
       showCustomModal: false,
-      searchbar: '', 
+      searchbar: '',
     };
   },
- 
+
   methods: {
-    
+
     delsearch() {
       this.$emit('search', this.searchbar)
     },
