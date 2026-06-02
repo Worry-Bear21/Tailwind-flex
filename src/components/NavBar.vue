@@ -1,4 +1,4 @@
-20260602 06:56:45 || 20260602 07:04:22 || <template>
+ <template>
   <div class="font-[Arial] bg-[#1a202c] fixed top-0 left-0 w-full z-[999] shadow-lg">
 
     <div class="border-b border-gray-700 relative">
@@ -59,7 +59,7 @@
       <!-- Search Bar -->
       <div class="flex-1 flex items-center">
         
-        <input v-model="localSearch" type="text" placeholder="Search in Lazada" @input="delsearch"
+        <input v-model="searchbar" @change="delsearch" type="text" placeholder="Search in Lazada" 
           class="w-full bg-gray-800 text-gray-200 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#EE4D2D]/40 border border-gray-700 rounded-l-lg transition-all placeholder:text-gray-400">
         <button
           class="bg-[#EE4D2D] text-white px-5 py-2.5 rounded-r-lg hover:bg-[#D44226] hover:shadow-md transition-all duration-200">
@@ -114,14 +114,14 @@ export default {
     return {
       showSaveMore: false,
       showCustomModal: false,
-      localSearch: '', 
+      searchbar: '', 
     };
   },
  
   methods: {
     
     delsearch() {
-      this.$emit('update-search', this.localSearch)
+      this.$emit('search', this.searchbar)
     },
     savemorebtn() {
       this.showSaveMore = true;

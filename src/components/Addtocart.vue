@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-200 w-full min-h-screen p-8 sm:p-16 dark:bg-gray-900 mt-5">
+  <div class="bg-gray-200 w-full min-h-screen p-8 sm:p-16 dark:bg-gray-900 mt-10">
 
     <div class="max-w-7xl mx-auto mb-10">
       <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-6">My Cart</h2>

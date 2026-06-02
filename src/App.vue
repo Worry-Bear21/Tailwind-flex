@@ -1,22 +1,12 @@
 <template>
   <div>
-    
-    <NavBar 
-      @openAddModal="showAddModal" 
-      @goTo="changePage" 
-      @update-search="reSearch" 
-      :cart="cart" 
-    />
 
-    
-    <Home 
-      v-if="currentPage === 'home'" 
-      :addingProduct="showaddModal" 
-      :searchText="searchValue"
-      @close="closeAddModal" 
-      @addTocart="addToCart" 
-    />
-    
+    <NavBar @openAddModal="showAddModal" @goTo="changePage" @search="handleSearch" :cart="cart" />
+
+
+    <Home v-if="currentPage === 'home'" :addingProduct="showaddModal" :searchbar="searchbar"
+      @close="closeAddModal" @addTocart="addToCart" />
+
     <Addtocart v-if="currentPage === 'showCart'" :cartitems="cart" />
   </div>
 </template>
@@ -36,7 +26,8 @@ export default {
       display: "0",
       num: "",
       cart: [],
-      searchValue: '' 
+      searchbar:''
+      
     }
   },
   methods: {
@@ -52,9 +43,9 @@ export default {
     changePage(page) {
       this.currentPage = page;
     },
-    
-    reSearch(change) {
-      this.searchValue = change
+
+    handleSearch(search) {
+      this.searchbar = search;
     }
   }
 }

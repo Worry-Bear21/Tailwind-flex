@@ -122,7 +122,7 @@
             <div class="p-4 mb-6 text-lg text-center leading-tight first-letter:capitalize font-medium text-white">
             </div>
 
-            <!-- ✅ Giusab: Gikan sa products -> filteredProducts -->
+
             <div class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 p-4">
                 <div v-for="(product, i) in filteredProducts" :key="product.id"
                     class="group h-[320px] rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
@@ -201,10 +201,10 @@ export default {
         addingProduct: {
             type: Boolean,
         },
-     
-        searchText: {
+
+        searchbar: {
             type: String,
-            default: ''
+
         }
     },
     data() {
@@ -285,12 +285,13 @@ export default {
     },
     computed: {
         filteredProducts() {
-            if (!this.searchText) {
+            if (!this.searchbar.trim()) {
                 return this.products;
             }
-            return this.products.filter(product => {
-                return product.name.toLowerCase().includes(this.searchText.toLowerCase());
-            });
+            const query = this.searchbar.toLocaleLowerCase().trim();
+            return this.products.filter(product =>
+                product.name.toLowerCase().includes(query)
+            )
         }
     },
     methods: {
