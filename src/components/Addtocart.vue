@@ -5,7 +5,7 @@
       <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-6">My Cart</h2>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-        <div v-for="item in cartitems" :key="item.id"
+        <div v-for="item in cartitems" 
           class="group h-[420px] shadow-lg rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
           style="background-color: #1a202c;">
           <!-- Product Image -->
@@ -20,7 +20,7 @@
               class="hover:text-yellow-400 cursor-pointer font-semibold text-lg mb-2 transition-colors duration-200 text-white line-clamp-2">
               {{ item.name }}
             </p>
-            <p class="text-gray-300 text-base font-medium mb-3">₱ {{ item.price }}</p>
+            <p class="text-gray-300 text-base font-medium mb-3">{{ item.price }}</p>
 
             <!-- Action Buttons -->
             <div class="flex gap-3 w-full justify-center">

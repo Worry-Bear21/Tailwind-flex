@@ -3,9 +3,8 @@
         <div class="max-w-7xl w-full mx-auto">
 
             <div class="flex justify-center flex-row gap-4 mb-8 w-full">
-                <img src="https://img.lazcdn.com/g/tps/imgextra/i1/O1CN01gwKU6B1MEcp8LAkzX_!!6000000001403-0-tps-1976-688.jpg_2200x2200q80.jpg_.avif"
-                    alt="Banner"
-                    class="w-[78%] h-auto rounded-lg shadow-md object-cover transition-transform duration-300 hover:scale-[1.01]">
+                <img src="https://www.poshsevenreviews.com/wp-content/uploads/2023/11/159.webp" alt="Banner"
+                    class="w-[78%] h-80 rounded-lg shadow-md object-cover transition-transform duration-300 hover:scale-[1.01]">
                 <div class="w-[20%] rounded-lg shadow-md bg-white overflow-hidden">
                     <div class="flex items-center gap-2 px-3 mt-3">
                         <img src="https://img.lazcdn.com/us/domino/a96c58a6a88070c43bc63444f6774f51.png_120x120q80.png_.avif"
@@ -313,6 +312,9 @@ export default {
         },
         add(product) {
             this.$emit('addTocart', { ...product });
+        },
+        addorder(product) {
+            this.$emit('Order', { ...product });
         },
         eaddsacart(product) {
             this.$emit('addTocart', product);

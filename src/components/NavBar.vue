@@ -53,7 +53,7 @@
       <!-- Logo -->
       <div class="flex items-center w-[120px]">
         <img src="https://tse1.mm.bing.net/th/id/OIP.aV2au23ZP-jyEmJz0rDjKwHaG2?pid=ImgDet&w=474&h=438&rs=1&o=7&rm=3"
-          alt="Lazada Logo" class="w-full h-auto object-contain">
+          alt="Lazada Logo" class="w-full h-20 object-contain">
       </div>
 
       <!-- Search Bar -->
