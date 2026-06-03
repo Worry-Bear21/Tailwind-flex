@@ -122,38 +122,38 @@
             <div class="p-4 mb-6 text-lg text-center leading-tight first-letter:capitalize font-medium text-white">
             </div>
 
+            <div class="container mx-auto px-4 py-6">
+                <!-- Product Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <div v-for="(product, i) in filteredProducts" :key="product.id"
+                        class="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
+                        style="background-color: #1a202c;">
+                        <div class="w-full h-52 bg-gray-700/40 p-4 flex items-center justify-center">
+                            <img :src="product.image" :alt="product.name"
+                                class="h-full object-contain hover:scale-105 transition-transform duration-300" />
+                        </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                <div v-for="(product, i) in filteredProducts" :key="product.id"
-                    class="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
-                    style="background-color: #1a202c;">
-                    <img class="w-full h-64 object-contain object-center hover:cursor-pointer transition-transform duration-300 group-hover:scale-105 p-2"
-                        :src="product.image" alt="product image" />
-                    <div class="p-3">
                         <div class="p-4 flex flex-col flex-grow text-center">
-                            <p
-                                class="hover:text-yellow-400 cursor-pointer font-semibold text-sm line-clamp-2 leading-tight">
+                            <h3 class="text-white font-semibold text-lg mb-2 line-clamp-2 h-12">
                                 {{ product.name }}
-                            </p>
-                            <p class="text-orange-500 text-lg font-bold">
+                            </h3>
+                            <p class="text-yellow-400 font-bold text-xl mb-4">
                                 {{ product.price }}
                             </p>
 
                             <div class="flex flex-col gap-2 mt-auto">
-
                                 <div class="flex gap-2">
-                                    <button @click="add(product)"
+                                    <button @click="addToCartClicked(product)"
                                         class="flex-1 bg-yellow-500 hover:bg-yellow-600 text-black font-medium py-2 rounded-lg">
                                         Add to Cart
                                     </button>
-                                    <button @click="addOrder"
+                                    <button @click="buyNowClicked(product)"
                                         class="flex-1 bg-green-600 hover:bg-green-700 text-white font-medium py-2 rounded-lg">
                                         Buy Now
                                     </button>
                                 </div>
 
-
-                                <button @click="handleBuy(i)"
+                                <button @click="openProductModal(product)"
                                     class="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 rounded-lg transition-colors">
                                     View Details
                                 </button>
@@ -161,120 +161,70 @@
                         </div>
                     </div>
                 </div>
-            </div>
 
 
-            <h1 class="text-2xl font-bold text-white mt-10 mb-4 text-left">Categories</h1>
-            <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4 w-full p-4 rounded-lg shadow-sm"
-                style="background-color: #1a202c; min-height: 420px;">
-                <div v-for="category in categories" :key="category.id"
-                    class="bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105 p-3 h-[150px] flex flex-col items-center justify-center text-center cursor-pointer border border-gray-700">
-                    <img class="w-20 h-20 object-contain mb-2" :src="category.image" alt="category image" />
-                    <p class="text-white font-medium text-sm leading-tight m-0">{{ category.name }}</p>
-                </div>
-            </div>
-
-
-            <h1 class="text-xl font-bold text-white mt-8 mb-3 text-left">Just For You</h1>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-5 mt-4 w-full">
-                <div v-for="(product, i) in products" :key="product.id"
-                    class="group h-[270px] rounded-lg shadow-sm hover:shadow-xl overflow-hidden transition-all duration-300 hover:-translate-y-1"
-                    style="background-color: #1a202c;">
-                    <img class="w-full h-48 object-contain object-center hover:cursor-pointer transition-transform duration-300 group-hover:scale-105 p-2"
-                        :src="product.image" alt="product image" />
-                    <div class="p-3">
-                        <div class="flex flex-col gap-1">
-                            <p
-                                class="hover:text-[#ED2846] cursor-pointer font-medium text-white text-sm line-clamp-2 m-0">
-                                {{ product.name }}
-                            </p>
-                            <p class="text-[#ED2846] text-base font-bold mt-1 m-0">{{ product.price }}</p>
-                        </div>
+                <!-- Categories Section -->
+                <h1 class="text-2xl font-bold text-white mt-10 mb-4 text-left">Categories</h1>
+                <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4 w-full p-4 rounded-lg shadow-sm"
+                    style="background-color: #1a202c; min-height: 420px;">
+                    <div v-for="category in categories" :key="category.id"
+                        class="bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105 p-3 h-[150px] flex flex-col items-center justify-center text-center cursor-pointer border border-gray-700">
+                        <img class="w-20 h-20 object-contain mb-2" :src="category.image" :alt="category.name" />
+                        <p class="text-white font-medium text-sm leading-tight m-0">
+                            {{ category.name }}
+                        </p>
                     </div>
                 </div>
-            </div>
-            <button
-                class="text-[#ED2846] border-2 border-[#ED2846] font-bold h-9 px-5 rounded-md hover:bg-[#ED2846] hover:text-white transition-all duration-200 text-md flex items-center justify-center gap-2 mt-8 mx-auto cursor-pointer shadow-sm hover:shadow-md">
-                LOAD MORE
-            </button>
-
-            <Modal v-if="showProductModal" :selectedProduct="products[currentIndex]" @close="closeProductModal"
-                @addTocart="eaddsacart" />
-            <AddModal v-if="addingProduct" @close="closeaddModal" @submitProduct="add" />
-            <Footer />
 
 
-
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-
-
-                <div v-for="product in filteredProducts" :key="product.id"
-                    class="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col">
-                    <div class="w-full h-52 bg-gray-700/40 p-4 flex items-center justify-center">
-                        <img :src="product.image" :alt="product.name"
-                            class="h-full object-contain hover:scale-105 transition-transform duration-300" />
-                    </div>
-
-                    <div class="p-4 flex flex-col flex-grow text-center">
-                        <h3 class="text-white font-semibold text-lg mb-2 line-clamp-2 h-12">{{ product.name }}</h3>
-                        <p class="text-yellow-400 font-bold text-xl mb-4">{{ product.price }}</p>
-
-                        <div class="flex flex-col gap-2 mt-auto">
-
-                            <div class="flex gap-2">
-                                <button @click="addToCartClicked(product)"
-                                    class="flex-1 bg-yellow-500 hover:bg-yellow-600 text-black font-medium py-2 rounded-lg">
-                                    Add to Cart
-                                </button>
-                                <button @click="buyNowClicked(product)"
-                                    class="flex-1 bg-green-600 hover:bg-green-700 text-white font-medium py-2 rounded-lg">
-                                    Buy Now
-                                </button>
+                <!-- Just For You Section -->
+                <h1 class="text-xl font-bold text-white mt-8 mb-3 text-left">Just For You</h1>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-5 mt-4 w-full">
+                    <div v-for="(product, i) in products" :key="product.id"
+                        class="group h-[270px] rounded-lg shadow-sm hover:shadow-xl overflow-hidden transition-all duration-300 hover:-translate-y-1"
+                        style="background-color: #1a202c;">
+                        <img class="w-full h-48 object-contain object-center hover:cursor-pointer transition-transform duration-300 group-hover:scale-105 p-2"
+                            :src="product.image" :alt="product.name" />
+                        <div class="p-3">
+                            <div class="flex flex-col gap-1">
+                                <p
+                                    class="hover:text-[#ED2846] cursor-pointer font-medium text-white text-sm line-clamp-2 m-0">
+                                    {{ product.name }}
+                                </p>
+                                <p class="text-[#ED2846] text-base font-bold mt-1 m-0">
+                                    {{ product.price }}
+                                </p>
                             </div>
-
-
-                            <button @click="openProductModal(product)"
-                                class="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 rounded-lg transition-colors">
-                                View Details
-                            </button>
                         </div>
                     </div>
-                    >>>>>>> c4cdb76df7b891fb2f8c1a0f93ba9905b1f56230
                 </div>
 
+                <button
+                    class="text-[#ED2846] border-2 border-[#ED2846] font-bold h-9 px-5 rounded-md hover:bg-[#ED2846] hover:text-white transition-all duration-200 text-md flex items-center justify-center gap-2 mt-8 mx-auto cursor-pointer shadow-sm hover:shadow-md">
+                    LOAD MORE
+                </button>
+
+
+                <!-- Modals -->
+                <Modal v-if="showModal" :selectedProduct="selectedProduct" @addToCart="addToCartClicked"
+                    @close="closeProductModal" />
+                <AddModal v-if="addingProduct" @close="closeaddModal" @submitProduct="add" />
+                <Footer />
             </div>
         </div>
-
-
-        <Modal v-if="showModal" :selectedProduct="selectedProduct" @addToCart="addToCartClicked"
-            @close="closeProductModal" />
-
     </div>
 </template>
 
 <script>
-
 import Modal from './Modal.vue'
+import AddModal from './AddModal.vue'
+import Footer from './Footer.vue'
 
 export default {
-
-    components: { Modal },
-
+    components: { Modal, AddModal, Footer },
     props: {
         addingProduct: Boolean,
         searchbar: String
-    },
-    data() {
-        return {
-            products: [
-                { id: 1, name: "Wireless Headphones Pro", price: "₱ 1,299.00", image: "https://tse1.mm.bing.net/th/id/OIP.7sJ9aK4QrHdUeK8zL7xQgwHaHa?w=200&h=200&c=7" },
-                { id: 2, name: "Smart Watch Series 7", price: "₱ 2,499.00", image: "https://tse1.mm.bing.net/th/id/OIP.x8ZbJ4QrHdUeK8zL7xQgwHaHa?w=200&h=200&c=7" },
-                { id: 3, name: "Bluetooth Speaker Mini", price: "₱ 499.00", image: "https://tse1.mm.bing.net/th/id/OIP.9sK9aK4QrHdUeK8zL7xQgwHaHa?w=200&h=200&c=7" },
-                { id: 4, name: "Power Bank 20000mAh", price: "₱ 799.00", image: "https://tse1.mm.bing.net/th/id/OIP.b8ZbJ4QrHdUeK8zL7xQgwHaHa?w=200&h=200&c=7" }
-            ],
-
-        }
     },
     data() {
         return {
@@ -285,13 +235,20 @@ export default {
             showAddModal: false,
             cart: [],
             order: [],
+            selectedProduct: null,
+            showModal: false,
+
             products: [
-                { id: 1, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9tNGExX2N1X200YTRfdHJhaW5faGVsbF9saWdodC5iYTdlZjU2NjJiZDE5NTk3NjY1NmFiMjgzODhlOGEzZTY2Yzg5MDIyLnBuZw--/auto/auto/85/notrim/01666860b0f8e07a09071f023f08e062.webp', name: 'M4A4 | Hellish', price: '₱639.99', },
-                { id: 2, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9hd3BfYXdwX2xvbmdkb2dfbGlnaHQuZDJkNmRkMzk5MjU3OTc3OTBmNWM3NGE5YjY2ZjEwMjQyYzliODkyYS5wbmc-/auto/auto/85/notrim/d8e26a7dc643e3d0f073bcb5ab1999b2.webp', name: 'AWP | LongDog', price: '₱2204.66', },
-                { id: 3, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9tcDlfY3VfbXA5X2xhdHRlX2xpZ2h0LjkyMmRkZTAwYzJkMDA4NzVmNjViZGI2OWI0NThmMDdhMDJkYmNjOGIucG5n/auto/auto/85/notrim/1acfa5017dc927d649c664263f503fc9.webp', name: 'MP9 | Latte Rush', price: '₱639.99', },
-                { id: 4, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl90ZWM5X3NvX3doaXRlb3V0X3RlYzlfbGlnaHQuNjUxNTk3ZmZmNjlmMjExY2Q3MGY5MzE2MGFmNjA4MWI1OTFiMmFkZC5wbmc-/auto/auto/85/notrim/2c27d29abf93d9e6f7618fd5ad04fca4.webp', name: 'Tec-9 | Whiteout', price: '₱639.99' },
-                { id: 5, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9hazQ3X2N1X292ZXJwYXNzX21vbnN0ZXJfYWs0N19saWdodC41NjE3NTdlNTExMjMyNmEwMjYxZWU5MmY1MDE1OWM3OThjYjZhZmU3LnBuZw--/auto/auto/85/notrim/6efbbef2dcf1dda00706cd84c5fccf8e.webp', name: 'AK-47 | B the Monsterl', price: '₱639.99', },
-            ],
+                { id: 1, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9kdWFsX2VsaXRlX2JpYmxpY2FsX2FuZ2VsX2xpZ2h0LmEwOTIwZWYxMjI3Y2FhYTEyNzgzMzNmMmI1YjMzMzRiZGM4YTk3NjIucG5n/auto/auto/85/notrim/2757513c4185d957e5f02cdda6793cc2.webp', name: 'Dual Berettas | Angel Eyes', price: '₱100.00' },
+                { id: 2, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9hbV9jcnlzdGFsbGl6ZWRfYmx1ZV9saWdodC45MTI5MjQ3ZTViMDYwYmIzOGI0MGZlNTYxNjIxNGI3MjhmODRlZGQ3LnBuZw--/auto/auto/85/notrim/c39469a3533f0a7032371a5d10c29283.webp', name: 'Dual Berettas | Cobalt Quartz', price: '₱1480.00' },
+                { id: 3, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9jdV9vdmVycGFzc19iYWJ5X2R1YWxpZXNfbGlnaHQuZWUxOTk4YzJkOWRiMjZiMzU0MzBjMjAxMzliODU0YTdiODkwNWE3OC5wbmc-/auto/auto/85/notrim/1aa696b3c6a985ac040a8963462173ea.webp', name: 'Dual Berettas | Sweet Little Angels', price: '₱121.00' },
+                { id: 4, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9jdV9lbGl0ZXNfYmV3YXJlX2xpZ2h0LmJhZDc5MDZlMGNjNTI4ODJiNTVhMDIxMTY2MzM1YWM3MzEwZmJiYWQucG5n/auto/auto/85/notrim/171523c75e59dad060997c8c8f4f616a.webp', name: 'Dual Berettas | Flora Carnivora', price: '₱59.99' },
+                { id: 5, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9jdV9kdWFsX2VsaXRlc19yYWxseV9saWdodC5iYzhiZWEwNTkzZjUzMWNiN2UxYjdhODlkM2U3NGJkMjhkZDRiNTQyLnBuZw--/auto/auto/85/notrim/12bce52971502759ed24ba269160b9ba.webp', name: 'F85 Rechargeable Turbo Fan 100 Super Strong Wind Speed Function', price: '₱52.99' },
+                { id: 6, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9zcF9kcnlfd29vZF9saWdodC40NTRiZTExNDM0NGE4NTliZTNiZDk0MGE0MDAxYWUxMjk1OWY2ZWMxLnBuZw--/auto/auto/85/notrim/0e51cbd2fac96dfb9ff61c66b7bc5113.webp', name: 'Dual Berettas | Drift Wood', price: '₱129.50' },
+                { id: 7, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9jbGFycGFzc19iYW5nZXJpbmVfbGlnaHQuYjFlNTI5NGZjYzEwMWRlMGU2NmE0NjY2MTY0NjY5ZGUyYTVhZGUwZC5wbmc-/auto/auto/85/notrim/04b29d291ef1bee40e0a025648b7aaf3.webp', name: 'Dual Berettas | Demolition', price: '₱45.50' },
+                { id: 8, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9hbl9lbWVyYWxkX2xpZ2h0LjVlMjRmYWY0NjVhZjVlOGQzZjZjOTEzYjMzMjFlZDQ4NDQxZGJkNzMucG5n/auto/auto/85/notrim/efbd2a572d6c2785c8425599a0ebb411.webp', name: 'Dual Berettas | Emerald', price: '₱111.13' },
+                { id: 9, image: 'https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9nc19kdWFsX2JlcmV0dGFzX3RyZWFkX2xpZ2h0LjUxN2MzMTVhYTNmZDM0YWQ5OTViM2YxZDUwNWVlNGE5ODg3ZmNmZmEucG5n/auto/auto/85/notrim/a072047867eed065c0ead976b109df71.webp', name: 'Dual Berettas | Tread', price: '₱95.50' },
+                { id: 10, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9hbl9uYXZ5X2xpZ2h0LmEyYmU0ZDZmODBjZDE1MzE3YzMwYWM2YzA5YTkyNjQyNDMzZWI4MzgucG5n/auto/auto/85/notrim/d303fc9065bb112904cc80fe00806c94.webp', name: "Dual Berettas | Anodized Navy", price: '₱88.00' },],
             categories: [
                 { id: 1, name: 'PISTOLS', image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9kZWFnbGVfZGVhZ2xlX2ZpcmVicmVhdGhpbmdfbGlnaHQuNWY1MGZkODA3NGFjMjRhNjE3YmM4M2ZkOTRlMDQ0OGYyNWQ3NTBlMy5wbmc-/auto/auto/85/notrim/039ebf1439a7ac5647bcfe7095c0d0c4.webp' },
                 { id: 2, name: "SMG's", image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9iaXpvbl9jdV9iaXpvbl9hbGxfaW5fbGlnaHQuYzM4YmUyN2QwNzViMjBhMjc0MDViNTZjOWMxN2M2NGU0YmVjODZiNi5wbmc-/auto/auto/85/notrim/876fadc7f9b2e5c23201f0a3a20d48af.webp' },
@@ -310,7 +267,7 @@ export default {
                 { id: 15, name: 'BOREAL COLLECTION', image: 'https://cdn.csgoskins.gg/public/uih/collections/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvY29sbGVjdGlvbnMvOGM4NjEwNGJkZTg1NDg0MDQxOGYxYmZhYzExNzljM2EvZGVmYXVsdC5wbmc-/auto/auto/85/notrim/bdde8b871a1e946ee47fe46c07072620.webp' },
                 { id: 16, name: 'COLOGNE 2016', image: 'https://cdn.csgoskins.gg/public/uih/tournaments/aHR0cHM6Ly9jc2dvc2tpbnMuZ2cvYnVpbGQvYXNzZXRzLzIwMTYtZXNsLW9uZS1jb2xvZ25lLUJQWTJYY0ZWLnBuZw--/auto/auto/85/notrim/7460fe71c3994bc2191b146683b94caf.webp' }
             ],
-            products: [
+            Justforyou: [
                 { id: 1, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9kdWFsX2VsaXRlX2JpYmxpY2FsX2FuZ2VsX2xpZ2h0LmEwOTIwZWYxMjI3Y2FhYTEyNzgzMzNmMmI1YjMzMzRiZGM4YTk3NjIucG5n/auto/auto/85/notrim/2757513c4185d957e5f02cdda6793cc2.webp', name: 'Dual Berettas | Angel Eyes', price: '₱100.00' },
                 { id: 2, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9hbV9jcnlzdGFsbGl6ZWRfYmx1ZV9saWdodC45MTI5MjQ3ZTViMDYwYmIzOGI0MGZlNTYxNjIxNGI3MjhmODRlZGQ3LnBuZw--/auto/auto/85/notrim/c39469a3533f0a7032371a5d10c29283.webp', name: 'Dual Berettas | Cobalt Quartz', price: '₱1480.00' },
                 { id: 3, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9jdV9vdmVycGFzc19iYWJ5X2R1YWxpZXNfbGlnaHQuZWUxOTk4YzJkOWRiMjZiMzU0MzBjMjAxMzliODU0YTdiODkwNWE3OC5wbmc-/auto/auto/85/notrim/1aa696b3c6a985ac040a8963462173ea.webp', name: 'Dual Berettas | Sweet Little Angels', price: '₱121.00' },
@@ -362,7 +319,7 @@ export default {
             const query = this.searchbar.toLowerCase().trim();
             return this.products.filter(product =>
                 product.name.toLowerCase().includes(query)
-            )
+            );
         }
     },
     methods: {
@@ -372,13 +329,15 @@ export default {
         },
         closeProductModal() {
             this.showProductModal = false;
+            this.showModal = false;
+            this.selectedProduct = null;
         },
         closeaddModal() {
             this.$emit('close');
         },
         add(product) {
             this.$emit('addTocart', { ...product });
-
+            alert('✔️ Added to Cart!');
         },
         addorder(product) {
             this.$emit('Order', { ...product });
@@ -387,48 +346,23 @@ export default {
             this.$emit('addTocart', product);
         },
         eaddsaorder(product) {
-            this.$emit('Order', product)
+            this.$emit('Order', product);
         },
         addOrder() {
             this.$emit('Order', this.cartitems);
             alert('🎉 Order Successful!');
         },
-        add(product) {
-            this.$emit('addTocart', { ...product });
-            alert('✔️ Added to Cart!');
-        },
-
-        selectedProduct: null,
-        showModal: false
-    },
-
-    computed: {
-        filteredProducts() {
-            if (!this.searchbar) return this.products;
-            return this.products.filter(p => p.name.toLowerCase().includes(this.searchbar.toLowerCase()));
-        }
-    },
-    methods: {
-
         openProductModal(product) {
             this.selectedProduct = product;
             this.showModal = true;
         },
-
-        closeProductModal() {
-            this.showModal = false;
-            this.selectedProduct = null;
-        },
-
-
         addToCartClicked(product) {
             this.$emit('addToCart', product);
-
             this.closeProductModal();
         },
         buyNowClicked(product) {
             this.$emit('addToOrder', product);
         }
     }
-}
+};
 </script>

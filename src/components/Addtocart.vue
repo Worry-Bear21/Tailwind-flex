@@ -56,12 +56,12 @@ export default {
       alert('✅ Successfully added to Order!');
     },
     methods: {
-      removeItemClicked(id) {
-
+      removeItemClicked(index) {
+        this.cart.splice(index, 1);
       },
       checkoutClicked() {
-        this.$emit('addToOrder', this.cartitems);
-      },
+  this.$emit('addToOrder', this.cartitems);
+},
       removeItemClicked(id) {
 
         this.$emit('removeFromCart', id);
