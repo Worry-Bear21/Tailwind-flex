@@ -66,6 +66,7 @@ export default {
       this.$emit('close');
     },
     confirmAndClose() {
+      // this.add();
       this.closeModal();
     }
   }
