@@ -1,45 +1,22 @@
 <template>
   <div>
-    <Navbar 
-      @openAddModal="showaddModal = true" 
-      @goTo="changePage" 
-      @handleSearch="handleSearch" 
-      :cart="cart" 
-    />
+    <Navbar @openAddModal="showaddModal = true" @goTo="changePage" @handleSearch="handleSearch" :cart="cart" />
 
-    <Home 
-      v-if="currentPage === 'home'" 
-      :addingProduct="showaddModal" 
-      :searchbar="searchbar"
-      @addToCart="addToCart" 
-      @addToOrder="addToOrder" 
-      @closeAddModal="closeAddModal"
-    />
+    <Home v-if="currentPage === 'home'" :addingProduct="showaddModal" :searchbar="searchbar" @addToCart="addToCart"
+      @addToOrder="addToOrder" @closeAddModal="closeAddModal" />
 
-    <!-- ✅ GIHIMO NAKO NGA showCart PARA PAREHAS SA IMONG NAVBAR -->
-    <Addtocart 
-      v-if="currentPage === 'showCart'" 
-      :cartitems="cart" 
-      @addToOrder="addToOrder" 
-      @removeFromCart="removeFromCart"
-    />
 
-    <Order 
-      v-if="currentPage === 'showOrder'" 
-      :orderlist="order"
-    />
+    <Addtocart v-if="currentPage === 'showCart'" :cartitems="cart" @addToOrder="addToOrder"
+      @removeFromCart="removeFromCart" />
 
-<<<<<<< HEAD
+    <Order v-if="currentPage === 'showOrder'" :orderlist="order" />
+
     <Addtocart v-if="currentPage === 'showCart'" :cartitems="cart" @addToorder="addToOrder" @Order="addToOrder"
       @removeFromCart="removeFromCart" />
     <Order v-if="currentPage === 'showOrder'" :orders="order" />
-=======
-    <CustomModal 
-      v-if="showaddModal" 
-      @closeAddModal="closeAddModal" 
-      @submitProduct="submitProduct" 
-    />
->>>>>>> c4cdb76df7b891fb2f8c1a0f93ba9905b1f56230
+
+    <CustomModal v-if="showaddModal" @closeAddModal="closeAddModal" @submitProduct="submitProduct" />
+
   </div>
 </template>
 
@@ -52,10 +29,10 @@ import CustomModal from './components/CustomModal.vue'
 
 export default {
   components: { Navbar, Home, Addtocart, Order, CustomModal },
-  data(){
-    return{
+  data() {
+    return {
       showaddModal: false,
-      currentPage: 'home', // default nga panid
+      currentPage: 'home', 
       display: "",
       num: "",
       cart: [],
@@ -64,15 +41,14 @@ export default {
     }
   },
   methods: {
-<<<<<<< HEAD
+
     removeFromCart(id) {
       this.cart = this.cart.filter(item => item.id !== id)
     },
     addToOrder(product) {
       this.order.push(...product)
     },
-=======
->>>>>>> c4cdb76df7b891fb2f8c1a0f93ba9905b1f56230
+
     addToCart(product) {
       const naaNa = this.cart.find(item => item.id === product.id);
       if (!naaNa) {
@@ -97,7 +73,7 @@ export default {
       alert('🎉 Order Successful!');
     },
 
-    submitProduct(product){
+    submitProduct(product) {
       this.addToCart(product);
       this.closeAddModal();
     },
@@ -107,7 +83,7 @@ export default {
     },
 
     changePage(page) {
-      console.log('Gibalhin sa:', page); // Makita nimo sa console
+      console.log('goTo:', page); 
       this.currentPage = page;
     },
 
