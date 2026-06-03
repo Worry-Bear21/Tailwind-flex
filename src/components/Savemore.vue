@@ -1,7 +1,7 @@
 <template>
     <div
-        class="bg-white w-[420px] p-5 rounded-xl shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
-        <p class="text-sm text-gray-800 font-bold mb-4">Download the App for the best experience</p>
+        class=" w-[420px] p-5 rounded-xl shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1" style="background-color: #1a202c;">
+        <p class="text-sm text-gray-200 font-bold mb-4">Download the App for the best experience</p>
 
         <div class="flex gap-4 mb-4 items-start">
             <div
@@ -11,7 +11,7 @@
                     class="w-full h-full object-contain hover:scale-105 transition-transform duration-500" />
             </div>
 
-            <div class="text-sm text-gray-600 space-y-2 mt-1">
+            <div class="text-sm text-gray-400 space-y-2 mt-1">
                 <p class="flex items-center gap-2 hover:translate-x-1 transition-transform duration-300 font-medium">
                     ✨ Shop through our app to enjoy:
                 </p>
@@ -28,7 +28,7 @@
 
         <div class="flex mb-4 rounded-lg overflow-hidden shadow-sm">
             <input type="text" placeholder="e.g. 0123456789"
-                class="flex-1 border border-gray-300 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all" />
+                class="flex-1 border text-gray-200 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all" />
             <button
                 class="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-5 transition-all duration-200 font-medium text-base">
                 ➔

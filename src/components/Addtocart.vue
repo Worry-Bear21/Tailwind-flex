@@ -26,7 +26,7 @@
             <div class="flex gap-3 w-full justify-center">
               <button
                 class="px-4 py-2 bg-yellow-500 hover:bg-yellow-600 text-black font-medium rounded-lg transition-all hover:scale-105 duration-300 cursor-pointer shadow-sm hover:shadow-md"
-                @click="removeItem(item.id)">
+                @click="removeItemClicked(item.id)">
                 Remove
               </button>
               <button
@@ -59,6 +59,11 @@ export default {
   methods:{
     addOrder(){
       this.$emit('Order',this.cartitems);
+      this.removeItemClicked()
+      alert('✅ Successfully added to Order!');
+    },
+     removeItemClicked(id) {
+      this.$emit('removeFromCart', id);
     }
   }
 }

@@ -5,14 +5,14 @@
             <div class="flex justify-center flex-row gap-4 mb-8 w-full">
                 <img src="https://www.poshsevenreviews.com/wp-content/uploads/2023/11/159.webp" alt="Banner"
                     class="w-[78%] h-80 rounded-lg shadow-md object-cover transition-transform duration-300 hover:scale-[1.01]">
-                <div class="w-[20%] rounded-lg shadow-md bg-white overflow-hidden">
+                <div class="w-[20%] rounded-lg shadow-md overflow-hidden" style="background-color: #1a202c;">
                     <div class="flex items-center gap-2 px-3 mt-3">
                         <img src="https://img.lazcdn.com/us/domino/a96c58a6a88070c43bc63444f6774f51.png_120x120q80.png_.avif"
                             class="w-9 h-9" alt="App Icon">
-                        <h1 class="text-gray-800 font-bold text-base m-0">TRY OUR APP</h1>
+                        <h1 class="text-gray-200 font-bold text-base m-0">TRY OUR APP</h1>
                     </div>
                     <div
-                        class="mt-3 mx-3 h-[120px] rounded-lg bg-gradient-to-br from-[#db2777] via-[#ef4444] to-[#f97316] shadow-sm">
+                        class="mt-3 mx-3 h-[150px] rounded-lg bg-gradient-to-br from-[#db2777] via-[#ef4444] to-[#f97316] shadow-sm">
                         <div class="flex items-center gap-1.5 pt-2 pl-2">
                             <svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                 width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
@@ -41,7 +41,7 @@
                             class="w-20 h-auto" alt="QR Code">
                         <div class="flex flex-col gap-2">
                             <div
-                                class="h-8 bg-gray-50 rounded-md w-40 flex items-center justify-center gap-2 hover:bg-gray-100 transition-all duration-200 cursor-pointer border border-gray-200">
+                                class="h-8 bg-gray-50 rounded-md w-35 flex items-center justify-center gap-2 hover:bg-gray-100 transition-all duration-200 cursor-pointer border border-gray-200">
                                 <svg class="w-4 h-4 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                     width="30" height="30" fill="currentColor" viewBox="0 0 24 24">
                                     <path
@@ -50,7 +50,7 @@
                                 <p class="text-sm font-semibold text-gray-800 m-0">App Store</p>
                             </div>
                             <div
-                                class="h-8 bg-gray-50 rounded-md w-40 flex items-center justify-center gap-2 hover:bg-gray-100 transition-all duration-200 cursor-pointer border border-gray-200">
+                                class="h-8 bg-gray-50 rounded-md w-35 flex items-center justify-center gap-2 hover:bg-gray-100 transition-all duration-200 cursor-pointer border border-gray-200">
                                 <svg class="w-4 h-4 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                     width="30" height="30" fill="currentColor" viewBox="0 0 24 24">
                                     <path fill-rule="evenodd"
@@ -65,23 +65,23 @@
             </div>
 
             <div class="flex justify-center gap-5 w-full mb-8">
-                <div
-                    class="bg-white h-[90px] w-[48%] rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100">
+                <div class=" h-[90px] w-[48%] rounded-lg shadow-sm hover:shadow-md transition-all duration-300"
+                    style="background-color: #1a202c;">
                     <div class="flex justify-between items-center h-full px-4">
                         <div class="flex flex-col gap-1">
-                            <h1 class="text-xl font-bold text-gray-900 m-0">Top Up</h1>
-                            <h1 class="text-sm text-gray-600 m-0">Top Up & Pay Bills Easily</h1>
+                            <h1 class="text-xl font-bold text-gray-200 m-0">Top Up</h1>
+                            <h1 class="text-sm text-gray-400 m-0">Top Up & Pay Bills Easily</h1>
                         </div>
                         <img src="https://img.lazcdn.com/us/domino/bf9403bb-c546-4646-815e-dc3126f8f14c_PH-276-260.png_300x300q80.png_.avif"
                             class="w-18 h-18" alt="Top Up Icon">
                     </div>
                 </div>
-                <div
-                    class="bg-white h-[90px] w-[48%] rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100">
+                <div class=" h-[90px] w-[48%] rounded-lg shadow-sm hover:shadow-md transition-all duration-300 "
+                    style="background-color: #1a202c;">
                     <div class="flex justify-between items-center h-full px-4">
                         <div class="flex flex-col gap-1">
-                            <h1 class="text-xl font-bold text-gray-900 m-0">LazMall</h1>
-                            <h1 class="text-sm text-gray-600 m-0">Shop 100% Authentic Brands</h1>
+                            <h1 class="text-xl font-bold text-gray-200 m-0">LazMall</h1>
+                            <h1 class="text-sm text-gray-400 m-0">Shop 100% Authentic Brands</h1>
                         </div>
                         <img src="https://img.lazcdn.com/us/domino/92419c5c-19b8-4f17-a88c-6c7e3745d9a4_PH-276-260.png_300x300q80.png_.avif"
                             class="w-18 h-18" alt="LazMall Icon">
@@ -91,8 +91,8 @@
 
             <div class="mb-4">
                 <h1 class="text-xl font-bold text-white mb-3">Flash Sale</h1>
-                <div
-                    class="w-full h-16 bg-white rounded-lg shadow-sm flex justify-between items-center px-5 border border-gray-100">
+                <div class="w-full h-16 rounded-lg shadow-sm flex justify-between items-center px-5"
+                    style="background-color: #1a202c;">
                     <div class="flex justify-between items-center w-2/3">
                         <h1
                             class="text-[#FF933F] font-bold cursor-pointer hover:text-[#ED2846] transition-colors duration-200 m-0 text-base">
@@ -122,15 +122,14 @@
             </div>
 
 
-            <div class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 p-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 <div v-for="(product, i) in filteredProducts" :key="product.id"
-                    class="group h-[320px] rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+                    class="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
                     style="background-color: #1a202c;">
-                    <img @click="handleBuy(i)"
-                        class="w-full h-64 object-contain object-center hover:cursor-pointer transition-transform duration-300 group-hover:scale-105 p-2"
+                    <img class="w-full h-64 object-contain object-center hover:cursor-pointer transition-transform duration-300 group-hover:scale-105 p-2"
                         :src="product.image" alt="product image" />
                     <div class="p-3">
-                        <div class="flex flex-col text-white gap-1">
+                        <div class="p-4 flex flex-col flex-grow text-center">
                             <p
                                 class="hover:text-yellow-400 cursor-pointer font-semibold text-sm line-clamp-2 leading-tight">
                                 {{ product.name }}
@@ -138,6 +137,26 @@
                             <p class="text-orange-500 text-lg font-bold">
                                 {{ product.price }}
                             </p>
+
+                            <div class="flex flex-col gap-2 mt-auto">
+
+                                <div class="flex gap-2">
+                                    <button @click="add(product)"
+                                        class="flex-1 bg-yellow-500 hover:bg-yellow-600 text-black font-medium py-2 rounded-lg">
+                                        Add to Cart
+                                    </button>
+                                    <button @click="addOrder"
+                                        class="flex-1 bg-green-600 hover:bg-green-700 text-white font-medium py-2 rounded-lg">
+                                        Buy Now
+                                    </button>
+                                </div>
+
+
+                                <button @click="handleBuy(i)"
+                                    class="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 rounded-lg transition-colors">
+                                    View Details
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -157,19 +176,18 @@
 
             <h1 class="text-xl font-bold text-white mt-8 mb-3 text-left">Just For You</h1>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-5 mt-4 w-full">
-                <div v-for="(item, i) in JustForYou" :key="item.id"
+                <div v-for="(product, i) in products" :key="product.id"
                     class="group h-[270px] rounded-lg shadow-sm hover:shadow-xl overflow-hidden transition-all duration-300 hover:-translate-y-1"
                     style="background-color: #1a202c;">
-                    <img @click="handleBuy(i)"
-                        class="w-full h-48 object-contain object-center hover:cursor-pointer transition-transform duration-300 group-hover:scale-105 p-2"
-                        :src="item.image" alt="product image" />
+                    <img class="w-full h-48 object-contain object-center hover:cursor-pointer transition-transform duration-300 group-hover:scale-105 p-2"
+                        :src="product.image" alt="product image" />
                     <div class="p-3">
                         <div class="flex flex-col gap-1">
                             <p
                                 class="hover:text-[#ED2846] cursor-pointer font-medium text-white text-sm line-clamp-2 m-0">
-                                {{ item.name }}
+                                {{ product.name }}
                             </p>
-                            <p class="text-[#ED2846] text-base font-bold mt-1 m-0">{{ item.price }}</p>
+                            <p class="text-[#ED2846] text-base font-bold mt-1 m-0">{{ product.price }}</p>
                         </div>
                     </div>
                 </div>
@@ -244,7 +262,7 @@ export default {
                 { id: 15, name: 'BOREAL COLLECTION', image: 'https://cdn.csgoskins.gg/public/uih/collections/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvY29sbGVjdGlvbnMvOGM4NjEwNGJkZTg1NDg0MDQxOGYxYmZhYzExNzljM2EvZGVmYXVsdC5wbmc-/auto/auto/85/notrim/bdde8b871a1e946ee47fe46c07072620.webp' },
                 { id: 16, name: 'COLOGNE 2016', image: 'https://cdn.csgoskins.gg/public/uih/tournaments/aHR0cHM6Ly9jc2dvc2tpbnMuZ2cvYnVpbGQvYXNzZXRzLzIwMTYtZXNsLW9uZS1jb2xvZ25lLUJQWTJYY0ZWLnBuZw--/auto/auto/85/notrim/7460fe71c3994bc2191b146683b94caf.webp' }
             ],
-            JustForYou: [
+            products: [
                 { id: 1, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9kdWFsX2VsaXRlX2JpYmxpY2FsX2FuZ2VsX2xpZ2h0LmEwOTIwZWYxMjI3Y2FhYTEyNzgzMzNmMmI1YjMzMzRiZGM4YTk3NjIucG5n/auto/auto/85/notrim/2757513c4185d957e5f02cdda6793cc2.webp', name: 'Dual Berettas | Angel Eyes', price: '₱100.00' },
                 { id: 2, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9hbV9jcnlzdGFsbGl6ZWRfYmx1ZV9saWdodC45MTI5MjQ3ZTViMDYwYmIzOGI0MGZlNTYxNjIxNGI3MjhmODRlZGQ3LnBuZw--/auto/auto/85/notrim/c39469a3533f0a7032371a5d10c29283.webp', name: 'Dual Berettas | Cobalt Quartz', price: '₱1480.00' },
                 { id: 3, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9jdV9vdmVycGFzc19iYWJ5X2R1YWxpZXNfbGlnaHQuZWUxOTk4YzJkOWRiMjZiMzU0MzBjMjAxMzliODU0YTdiODkwNWE3OC5wbmc-/auto/auto/85/notrim/1aa696b3c6a985ac040a8963462173ea.webp', name: 'Dual Berettas | Sweet Little Angels', price: '₱121.00' },
@@ -312,6 +330,7 @@ export default {
         },
         add(product) {
             this.$emit('addTocart', { ...product });
+            
         },
         addorder(product) {
             this.$emit('Order', { ...product });
@@ -321,7 +340,15 @@ export default {
         },
         eaddsaorder(product) {
             this.$emit('Order', product)
-        }
+        },
+        addOrder() {    
+            this.$emit('Order', this.cartitems);
+            alert('🎉 Order Successful!');  
+        },
+        add(product) {
+      this.$emit('addTocart', { ...product });
+      alert('✔️ Added to Cart!');
+    },
     }
 };
 </script>

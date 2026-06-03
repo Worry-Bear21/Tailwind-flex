@@ -7,8 +7,9 @@
     <Home v-if="currentPage === 'home'" :addingProduct="showaddModal" :searchbar="searchbar" @close="closeAddModal"
       @addTocart="addToCart" @addToorder="addToOrder" />
 
-    <Addtocart v-if="currentPage === 'showCart'" :cartitems="cart"  @addToorder="addToOrder"  />
-    <Order v-if="currentPage === 'showOrder'" :orderlist="order" />
+    <Addtocart v-if="currentPage === 'showCart'" :cartitems="cart" @addToorder="addToOrder" @Order="addToOrder"
+      @removeFromCart="removeFromCart" />
+    <Order v-if="currentPage === 'showOrder'" :orders="order" />
   </div>
 </template>
 
@@ -35,8 +36,11 @@ export default {
     }
   },
   methods: {
+    removeFromCart(id) {
+      this.cart = this.cart.filter(item => item.id !== id)
+    },
     addToOrder(product) {
-      this.order.push({ ...product })
+      this.order.push(...product)
     },
     addToCart(product) {
       this.cart.push({ ...product })

@@ -26,16 +26,6 @@
                         </div>
                         <p class="ml-auto font-semibold text-gray-400">{{ order.price }}</p>
                     </div>
-
-                    <div class="flex items-center">
-                        <img src="https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9nM3NnMV9jdV9nM3NnMV90YWN0aWNhbG1hcF9saWdodC5lNmFkZjAwNWFjYjVlMTY1NzIwOThjMDExYmIyZmViNWY3OWEyMjk0LnBuZw--/auto/auto/85/notrim/4ebf5b79bafb6c5df585e49f76d2bb11.webp"
-                            alt="Product" class="w-16 h-16 rounded mr-4">
-                        <div>
-                            <p class="font-medium text-white">Bluetooth Speaker</p>
-                            <p class="text-sm text-gray-400">Qty: 2</p>
-                        </div>
-                        <p class="ml-auto font-semibold text-gray-400">₱3,198.00</p>
-                    </div>
                 </div>
 
                 <div class="mt-4 flex justify-between items-center border-t pt-3">

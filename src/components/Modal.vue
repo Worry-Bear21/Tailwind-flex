@@ -29,7 +29,8 @@
         </div>
         <div class="flex items-end justify-between mt-2">
           <div class="flex items-baseline space-x-2">{{ selectedProduct.price }}</div>
-          <button class="w-10 h-10 hover:scale-105 duration-300 rounded-full bg-blue-600 flex items-center justify-center shadow text-white">
+          <button
+            class="w-10 h-10 hover:scale-105 duration-300 rounded-full bg-blue-600 flex items-center justify-center shadow text-white">
             <svg @click="add" class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
               viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
               stroke-linejoin="round">
@@ -41,7 +42,7 @@
             </svg>
           </button>
         </div>
-        <button @click="closeModal"
+        <button @click="confirmAndClose"
           class="w-full border flex justify-center items-center text-center px-3 rounded-md bg-red-500 cursor-pointer hover:bg-green-500 hover:scale-105 duration-300 mt-3 py-2">Confirm</button>
       </div>
     </div>
@@ -55,12 +56,17 @@ export default {
       type: Object,
     }
   },
+  emits: ['addToCart', 'close'], 
   methods: {
     add() {
       this.$emit('addTocart', this.selectedProduct);
+      alert('⚠️ Successfully added to Cart!');
     },
     closeModal() {
       this.$emit('close');
+    },
+    confirmAndClose() {
+      this.closeModal();
     }
   }
 }
