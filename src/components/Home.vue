@@ -1,10 +1,9 @@
 <template>
-  <div class="bg-gray-100 dark:bg-gray-900 w-full min-h-screen pt-24 px-4 sm:px-8 lg:px-16">
-    <div class="max-w-7xl mx-auto py-10">
-      <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-8 text-center">Featured Products</h2>
+    <div class="bg-gray-100 dark:bg-gray-900 w-full min-h-screen pt-24 px-4 sm:px-8 lg:px-16">
+        <div class="max-w-7xl mx-auto py-10">
+            <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-8 text-center">Featured Products</h2>
 
-<<<<<<< HEAD
-            <div class="flex justify-center flex-row gap-4 mb-8 w-full">
+             <div class="flex justify-center flex-row gap-4 mb-8 w-full">
                 <img src="https://www.poshsevenreviews.com/wp-content/uploads/2023/11/159.webp" alt="Banner"
                     class="w-[78%] h-80 rounded-lg shadow-md object-cover transition-transform duration-300 hover:scale-[1.01]">
                 <div class="w-[20%] rounded-lg shadow-md overflow-hidden" style="background-color: #1a202c;">
@@ -64,224 +63,216 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="flex justify-center gap-5 w-full mb-8">
-                <div class=" h-[90px] w-[48%] rounded-lg shadow-sm hover:shadow-md transition-all duration-300"
-                    style="background-color: #1a202c;">
-                    <div class="flex justify-between items-center h-full px-4">
-                        <div class="flex flex-col gap-1">
-                            <h1 class="text-xl font-bold text-gray-200 m-0">Top Up</h1>
-                            <h1 class="text-sm text-gray-400 m-0">Top Up & Pay Bills Easily</h1>
-                        </div>
-                        <img src="https://img.lazcdn.com/us/domino/bf9403bb-c546-4646-815e-dc3126f8f14c_PH-276-260.png_300x300q80.png_.avif"
-                            class="w-18 h-18" alt="Top Up Icon">
-                    </div>
-                </div>
-                <div class=" h-[90px] w-[48%] rounded-lg shadow-sm hover:shadow-md transition-all duration-300 "
-                    style="background-color: #1a202c;">
-                    <div class="flex justify-between items-center h-full px-4">
-                        <div class="flex flex-col gap-1">
-                            <h1 class="text-xl font-bold text-gray-200 m-0">LazMall</h1>
-                            <h1 class="text-sm text-gray-400 m-0">Shop 100% Authentic Brands</h1>
-                        </div>
-                        <img src="https://img.lazcdn.com/us/domino/92419c5c-19b8-4f17-a88c-6c7e3745d9a4_PH-276-260.png_300x300q80.png_.avif"
-                            class="w-18 h-18" alt="LazMall Icon">
-                    </div>
-                </div>
-            </div>
-
-            <div class="mb-4">
-                <h1 class="text-xl font-bold text-white mb-3">Flash Sale</h1>
-                <div class="w-full h-16 rounded-lg shadow-sm flex justify-between items-center px-5"
-                    style="background-color: #1a202c;">
-                    <div class="flex justify-between items-center w-2/3">
-                        <h1
-                            class="text-[#FF933F] font-bold cursor-pointer hover:text-[#ED2846] transition-colors duration-200 m-0 text-base">
-                            On Sale Now
-                        </h1>
-                        <div class="flex gap-2 items-center">
-                            <h1 class="text-gray-700 text-sm font-medium m-0">Ending in</h1>
-                            <button
-                                class="border-none bg-[#ED2846] text-white w-9 h-9 rounded-md font-bold hover:scale-105 duration-300 cursor-pointer text-sm shadow-sm">11</button>
-                            <p class="text-sm text-gray-700 font-bold m-0">:</p>
-                            <button
-                                class="border-none bg-[#ED2846] text-white w-9 h-9 rounded-md font-bold hover:scale-105 duration-300 cursor-pointer text-sm shadow-sm">26</button>
-                            <p class="text-sm text-gray-700 font-bold m-0">:</p>
-                            <button
-                                class="border-none bg-[#ED2846] text-white w-9 h-9 rounded-md font-bold hover:scale-105 duration-300 cursor-pointer text-sm shadow-sm">2023</button>
-                        </div>
-                    </div>
-                    <button
-                        class="text-[#ED2846] border-2 border-[#ED2846] font-bold h-9 px-4 rounded-md hover:bg-[#ED2846] hover:text-white transition-all duration-200 text-sm shadow-sm">
-                        SHOP ALL PRODUCTS
-                    </button>
-                </div>
-            </div>
-
-
-            <div class="p-4 mb-6 text-lg text-center leading-tight first-letter:capitalize font-medium text-white">
-            </div>
-
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                <div v-for="(product, i) in filteredProducts" :key="product.id"
-                    class="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
-                    style="background-color: #1a202c;">
-                    <img class="w-full h-64 object-contain object-center hover:cursor-pointer transition-transform duration-300 group-hover:scale-105 p-2"
-                        :src="product.image" alt="product image" />
-                    <div class="p-3">
-                        <div class="p-4 flex flex-col flex-grow text-center">
-                            <p
-                                class="hover:text-yellow-400 cursor-pointer font-semibold text-sm line-clamp-2 leading-tight">
-                                {{ product.name }}
-                            </p>
-                            <p class="text-orange-500 text-lg font-bold">
-                                {{ product.price }}
-                            </p>
-
-                            <div class="flex flex-col gap-2 mt-auto">
-
-                                <div class="flex gap-2">
-                                    <button @click="add(product)"
-                                        class="flex-1 bg-yellow-500 hover:bg-yellow-600 text-black font-medium py-2 rounded-lg">
-                                        Add to Cart
-                                    </button>
-                                    <button @click="addOrder"
-                                        class="flex-1 bg-green-600 hover:bg-green-700 text-white font-medium py-2 rounded-lg">
-                                        Buy Now
-                                    </button>
-                                </div>
-
-
-                                <button @click="handleBuy(i)"
-                                    class="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 rounded-lg transition-colors">
-                                    View Details
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <h1 class="text-2xl font-bold text-white mt-10 mb-4 text-left">Categories</h1>
-            <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4 w-full p-4 rounded-lg shadow-sm"
-                style="background-color: #1a202c; min-height: 420px;">
-                <div v-for="category in categories" :key="category.id"
-                    class="bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105 p-3 h-[150px] flex flex-col items-center justify-center text-center cursor-pointer border border-gray-700">
-                    <img class="w-20 h-20 object-contain mb-2" :src="category.image" alt="category image" />
-                    <p class="text-white font-medium text-sm leading-tight m-0">{{ category.name }}</p>
-                </div>
-            </div>
-
-
-            <h1 class="text-xl font-bold text-white mt-8 mb-3 text-left">Just For You</h1>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-5 mt-4 w-full">
-                <div v-for="(product, i) in products" :key="product.id"
-                    class="group h-[270px] rounded-lg shadow-sm hover:shadow-xl overflow-hidden transition-all duration-300 hover:-translate-y-1"
-                    style="background-color: #1a202c;">
-                    <img class="w-full h-48 object-contain object-center hover:cursor-pointer transition-transform duration-300 group-hover:scale-105 p-2"
-                        :src="product.image" alt="product image" />
-                    <div class="p-3">
-                        <div class="flex flex-col gap-1">
-                            <p
-                                class="hover:text-[#ED2846] cursor-pointer font-medium text-white text-sm line-clamp-2 m-0">
-                                {{ product.name }}
-                            </p>
-                            <p class="text-[#ED2846] text-base font-bold mt-1 m-0">{{ product.price }}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button
-                class="text-[#ED2846] border-2 border-[#ED2846] font-bold h-9 px-5 rounded-md hover:bg-[#ED2846] hover:text-white transition-all duration-200 text-md flex items-center justify-center gap-2 mt-8 mx-auto cursor-pointer shadow-sm hover:shadow-md">
-                LOAD MORE
-            </button>
-
-            <Modal v-if="showProductModal" :selectedProduct="products[currentIndex]" @close="closeProductModal"
-                @addTocart="eaddsacart" />
-            <AddModal v-if="addingProduct" @close="closeaddModal" @submitProduct="add" />
-            <Footer />
-
-
-
-=======
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        
-        <!-- ✅ ANG LISTAHAN SA PRODUKTO -->
-        <div 
-          v-for="product in filteredProducts" 
-          :key="product.id"
-          class="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
-        >
-          <div class="w-full h-52 bg-gray-700/40 p-4 flex items-center justify-center">
-            <img :src="product.image" :alt="product.name" class="h-full object-contain hover:scale-105 transition-transform duration-300"/>
-          </div>
-
-          <div class="p-4 flex flex-col flex-grow text-center">
-            <h3 class="text-white font-semibold text-lg mb-2 line-clamp-2 h-12">{{ product.name }}</h3>
-            <p class="text-yellow-400 font-bold text-xl mb-4">{{ product.price }}</p>
-
-            <div class="flex flex-col gap-2 mt-auto">
-              <!-- Imong daan nga mga buton -->
-              <div class="flex gap-2">
-                <button @click="addToCartClicked(product)" class="flex-1 bg-yellow-500 hover:bg-yellow-600 text-black font-medium py-2 rounded-lg">
-                  Add to Cart
-                </button>
-                <button @click="buyNowClicked(product)" class="flex-1 bg-green-600 hover:bg-green-700 text-white font-medium py-2 rounded-lg">
-                  Buy Now
-                </button>
-              </div>
-
-              <!-- ✅ DINHI GYUD IBUTANG ANG VIEW DETAILS BUTTON -->
-              <button 
-                @click="openProductModal(product)" 
-                class="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 rounded-lg transition-colors"
-              >
-                View Details
-              </button>
-            </div>
-          </div>
->>>>>>> c4cdb76df7b891fb2f8c1a0f93ba9905b1f56230
         </div>
 
-      </div>
+        <div class="flex justify-center gap-5 w-full mb-8">
+            <div class=" h-[90px] w-[48%] rounded-lg shadow-sm hover:shadow-md transition-all duration-300"
+                style="background-color: #1a202c;">
+                <div class="flex justify-between items-center h-full px-4">
+                    <div class="flex flex-col gap-1">
+                        <h1 class="text-xl font-bold text-gray-200 m-0">Top Up</h1>
+                        <h1 class="text-sm text-gray-400 m-0">Top Up & Pay Bills Easily</h1>
+                    </div>
+                    <img src="https://img.lazcdn.com/us/domino/bf9403bb-c546-4646-815e-dc3126f8f14c_PH-276-260.png_300x300q80.png_.avif"
+                        class="w-18 h-18" alt="Top Up Icon">
+                </div>
+            </div>
+            <div class=" h-[90px] w-[48%] rounded-lg shadow-sm hover:shadow-md transition-all duration-300 "
+                style="background-color: #1a202c;">
+                <div class="flex justify-between items-center h-full px-4">
+                    <div class="flex flex-col gap-1">
+                        <h1 class="text-xl font-bold text-gray-200 m-0">LazMall</h1>
+                        <h1 class="text-sm text-gray-400 m-0">Shop 100% Authentic Brands</h1>
+                    </div>
+                    <img src="https://img.lazcdn.com/us/domino/92419c5c-19b8-4f17-a88c-6c7e3745d9a4_PH-276-260.png_300x300q80.png_.avif"
+                        class="w-18 h-18" alt="LazMall Icon">
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <h1 class="text-xl font-bold text-white mb-3">Flash Sale</h1>
+            <div class="w-full h-16 rounded-lg shadow-sm flex justify-between items-center px-5"
+                style="background-color: #1a202c;">
+                <div class="flex justify-between items-center w-2/3">
+                    <h1
+                        class="text-[#FF933F] font-bold cursor-pointer hover:text-[#ED2846] transition-colors duration-200 m-0 text-base">
+                        On Sale Now
+                    </h1>
+                    <div class="flex gap-2 items-center">
+                        <h1 class="text-gray-700 text-sm font-medium m-0">Ending in</h1>
+                        <button
+                            class="border-none bg-[#ED2846] text-white w-9 h-9 rounded-md font-bold hover:scale-105 duration-300 cursor-pointer text-sm shadow-sm">11</button>
+                        <p class="text-sm text-gray-700 font-bold m-0">:</p>
+                        <button
+                            class="border-none bg-[#ED2846] text-white w-9 h-9 rounded-md font-bold hover:scale-105 duration-300 cursor-pointer text-sm shadow-sm">26</button>
+                        <p class="text-sm text-gray-700 font-bold m-0">:</p>
+                        <button
+                            class="border-none bg-[#ED2846] text-white w-9 h-9 rounded-md font-bold hover:scale-105 duration-300 cursor-pointer text-sm shadow-sm">2023</button>
+                    </div>
+                </div>
+                <button
+                    class="text-[#ED2846] border-2 border-[#ED2846] font-bold h-9 px-4 rounded-md hover:bg-[#ED2846] hover:text-white transition-all duration-200 text-sm shadow-sm">
+                    SHOP ALL PRODUCTS
+                </button>
+            </div>
+        </div>
+
+
+        <div class="p-4 mb-6 text-lg text-center leading-tight first-letter:capitalize font-medium text-white">
+        </div>
+
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <div v-for="(product, i) in filteredProducts" :key="product.id"
+                class="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
+                style="background-color: #1a202c;">
+                <img class="w-full h-64 object-contain object-center hover:cursor-pointer transition-transform duration-300 group-hover:scale-105 p-2"
+                    :src="product.image" alt="product image" />
+                <div class="p-3">
+                    <div class="p-4 flex flex-col flex-grow text-center">
+                        <p
+                            class="hover:text-yellow-400 cursor-pointer font-semibold text-sm line-clamp-2 leading-tight">
+                            {{ product.name }}
+                        </p>
+                        <p class="text-orange-500 text-lg font-bold">
+                            {{ product.price }}
+                        </p>
+
+                        <div class="flex flex-col gap-2 mt-auto">
+
+                            <div class="flex gap-2">
+                                <button @click="add(product)"
+                                    class="flex-1 bg-yellow-500 hover:bg-yellow-600 text-black font-medium py-2 rounded-lg">
+                                    Add to Cart
+                                </button>
+                                <button @click="addOrder"
+                                    class="flex-1 bg-green-600 hover:bg-green-700 text-white font-medium py-2 rounded-lg">
+                                    Buy Now
+                                </button>
+                            </div>
+
+
+                            <button @click="handleBuy(i)"
+                                class="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 rounded-lg transition-colors">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <h1 class="text-2xl font-bold text-white mt-10 mb-4 text-left">Categories</h1>
+        <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4 w-full p-4 rounded-lg shadow-sm"
+            style="background-color: #1a202c; min-height: 420px;">
+            <div v-for="category in categories" :key="category.id"
+                class="bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105 p-3 h-[150px] flex flex-col items-center justify-center text-center cursor-pointer border border-gray-700">
+                <img class="w-20 h-20 object-contain mb-2" :src="category.image" alt="category image" />
+                <p class="text-white font-medium text-sm leading-tight m-0">{{ category.name }}</p>
+            </div>
+        </div>
+
+
+        <h1 class="text-xl font-bold text-white mt-8 mb-3 text-left">Just For You</h1>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-5 mt-4 w-full">
+            <div v-for="(product, i) in products" :key="product.id"
+                class="group h-[270px] rounded-lg shadow-sm hover:shadow-xl overflow-hidden transition-all duration-300 hover:-translate-y-1"
+                style="background-color: #1a202c;">
+                <img class="w-full h-48 object-contain object-center hover:cursor-pointer transition-transform duration-300 group-hover:scale-105 p-2"
+                    :src="product.image" alt="product image" />
+                <div class="p-3">
+                    <div class="flex flex-col gap-1">
+                        <p class="hover:text-[#ED2846] cursor-pointer font-medium text-white text-sm line-clamp-2 m-0">
+                            {{ product.name }}
+                        </p>
+                        <p class="text-[#ED2846] text-base font-bold mt-1 m-0">{{ product.price }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button
+            class="text-[#ED2846] border-2 border-[#ED2846] font-bold h-9 px-5 rounded-md hover:bg-[#ED2846] hover:text-white transition-all duration-200 text-md flex items-center justify-center gap-2 mt-8 mx-auto cursor-pointer shadow-sm hover:shadow-md">
+            LOAD MORE
+        </button>
+
+        <Modal v-if="showProductModal" :selectedProduct="products[currentIndex]" @close="closeProductModal"
+            @addTocart="eaddsacart" />
+        <AddModal v-if="addingProduct" @close="closeaddModal" @submitProduct="add" />
+        <Footer />
+
+
+
+     
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+            
+            <div v-for="product in filteredProducts" :key="product.id"
+                class="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col">
+                <div class="w-full h-52 bg-gray-700/40 p-4 flex items-center justify-center">
+                    <img :src="product.image" :alt="product.name"
+                        class="h-full object-contain hover:scale-105 transition-transform duration-300" />
+                </div>
+
+                <div class="p-4 flex flex-col flex-grow text-center">
+                    <h3 class="text-white font-semibold text-lg mb-2 line-clamp-2 h-12">{{ product.name }}</h3>
+                    <p class="text-yellow-400 font-bold text-xl mb-4">{{ product.price }}</p>
+
+                    <div class="flex flex-col gap-2 mt-auto">
+                       
+                        <div class="flex gap-2">
+                            <button @click="addToCartClicked(product)"
+                                class="flex-1 bg-yellow-500 hover:bg-yellow-600 text-black font-medium py-2 rounded-lg">
+                                Add to Cart
+                            </button>
+                            <button @click="buyNowClicked(product)"
+                                class="flex-1 bg-green-600 hover:bg-green-700 text-white font-medium py-2 rounded-lg">
+                                Buy Now
+                            </button>
+                        </div>
+
+                        
+                        <button @click="openProductModal(product)"
+                            class="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 rounded-lg transition-colors">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+                >>>>>>> c4cdb76df7b891fb2f8c1a0f93ba9905b1f56230
+            </div>
+
+        </div>
     </div>
 
-    <!-- ✅ DINHI SA UBOS, SA GAWAS SA LISTAHAN - ANG IMONG MODAL.VUE -->
-    <Modal 
-      v-if="showModal" 
-      :selectedProduct="selectedProduct" 
-      @addToCart="addToCartClicked" 
-      @close="closeProductModal"
-    />
+   
+    <Modal v-if="showModal" :selectedProduct="selectedProduct" @addToCart="addToCartClicked"
+        @close="closeProductModal" />
 
-  </div>
+    </div>
 </template>
 
 <script>
-// ✅ SAKTO NGA PANGALAN: Modal (kay Modal.vue man ang imoha)
+
 import Modal from './Modal.vue'
 
 export default {
-  // ✅ I-DECLARE ANG COMPONENT
-  components: { Modal },
+   
+    components: { Modal },
 
-  props: {
-    addingProduct: Boolean,
-    searchbar: String
-  },
-  data() {
-    return {
-      products: [
-        { id: 1, name: "Wireless Headphones Pro", price: "₱ 1,299.00", image: "https://tse1.mm.bing.net/th/id/OIP.7sJ9aK4QrHdUeK8zL7xQgwHaHa?w=200&h=200&c=7" },
-        { id: 2, name: "Smart Watch Series 7", price: "₱ 2,499.00", image: "https://tse1.mm.bing.net/th/id/OIP.x8ZbJ4QrHdUeK8zL7xQgwHaHa?w=200&h=200&c=7" },
-        { id: 3, name: "Bluetooth Speaker Mini", price: "₱ 499.00", image: "https://tse1.mm.bing.net/th/id/OIP.9sK9aK4QrHdUeK8zL7xQgwHaHa?w=200&h=200&c=7" },
-        { id: 4, name: "Power Bank 20000mAh", price: "₱ 799.00", image: "https://tse1.mm.bing.net/th/id/OIP.b8ZbJ4QrHdUeK8zL7xQgwHaHa?w=200&h=200&c=7" }
-      ],
+    props: {
+        addingProduct: Boolean,
+        searchbar: String
+    },
+    data() {
+        return {
+            products: [
+                { id: 1, name: "Wireless Headphones Pro", price: "₱ 1,299.00", image: "https://tse1.mm.bing.net/th/id/OIP.7sJ9aK4QrHdUeK8zL7xQgwHaHa?w=200&h=200&c=7" },
+                { id: 2, name: "Smart Watch Series 7", price: "₱ 2,499.00", image: "https://tse1.mm.bing.net/th/id/OIP.x8ZbJ4QrHdUeK8zL7xQgwHaHa?w=200&h=200&c=7" },
+                { id: 3, name: "Bluetooth Speaker Mini", price: "₱ 499.00", image: "https://tse1.mm.bing.net/th/id/OIP.9sK9aK4QrHdUeK8zL7xQgwHaHa?w=200&h=200&c=7" },
+                { id: 4, name: "Power Bank 20000mAh", price: "₱ 799.00", image: "https://tse1.mm.bing.net/th/id/OIP.b8ZbJ4QrHdUeK8zL7xQgwHaHa?w=200&h=200&c=7" }
+            ],
 
-<<<<<<< HEAD
         }
     },
     data() {
@@ -386,7 +377,7 @@ export default {
         },
         add(product) {
             this.$emit('addTocart', { ...product });
-            
+
         },
         addorder(product) {
             this.$emit('Order', { ...product });
@@ -397,48 +388,46 @@ export default {
         eaddsaorder(product) {
             this.$emit('Order', product)
         },
-        addOrder() {    
+        addOrder() {
             this.$emit('Order', this.cartitems);
-            alert('🎉 Order Successful!');  
+            alert('🎉 Order Successful!');
         },
         add(product) {
-      this.$emit('addTocart', { ...product });
-      alert('✔️ Added to Cart!');
-    },
-=======
-      // ✅ KINI ANG GIHIMO PARA SA MODAL
+            this.$emit('addTocart', { ...product });
+            alert('✔️ Added to Cart!');
+        },
+      
       selectedProduct: null,
       showModal: false
->>>>>>> c4cdb76df7b891fb2f8c1a0f93ba9905b1f56230
     }
-  },
-  computed: {
+},
+computed: {
     filteredProducts() {
-      if (!this.searchbar) return this.products;
-      return this.products.filter(p => p.name.toLowerCase().includes(this.searchbar.toLowerCase()));
+        if (!this.searchbar) return this.products;
+        return this.products.filter(p => p.name.toLowerCase().includes(this.searchbar.toLowerCase()));
     }
-  },
-  methods: {
-    // ✅ ABLIHAN ANG MODAL UG IPASA ANG PRODUKTO
+},
+methods: {
+
     openProductModal(product) {
-      this.selectedProduct = product;
-      this.showModal = true;
+        this.selectedProduct = product;
+        this.showModal = true;
     },
-    // ✅ ISIRA ANG MODAL
+    
     closeProductModal() {
-      this.showModal = false;
-      this.selectedProduct = null;
+        this.showModal = false;
+        this.selectedProduct = null;
     },
 
-    // ✅ IMONG DAAN NGA FUNCTIONS
+   
     addToCartClicked(product) {
-      this.$emit('addToCart', product);
-      // Inig pislit gikan sa Modal, isira dayon
-      this.closeProductModal(); 
+        this.$emit('addToCart', product);
+        
+        this.closeProductModal();
     },
     buyNowClicked(product) {
-      this.$emit('addToOrder', product);
+        this.$emit('addToOrder', product);
     }
-  }
+}
 }
 </script>
