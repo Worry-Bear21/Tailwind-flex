@@ -28,7 +28,7 @@
             <div
                 class="flex items-center gap-4 p-2 rounded-md hover:bg-gray-700 transition-all duration-300 cursor-pointer group">
                 <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="28" height="28"
-                    viewBox="0 0 24 24" style="color: rgb(156, 163, 175);"
+                    viewBox="0 0 24 24"
                     class=" text-gray-400 group-hover:text-orange-500 transition-colors">
                     <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5">
                         <path stroke-linejoin="round" stroke-miterlimit="1.5"
@@ -44,7 +44,7 @@
             <div
                 class="flex items-center gap-4 p-2 rounded-md hover:bg-gray-700 transition-all duration-300 cursor-pointer group">
                 <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="28" height="28"
-                    viewBox="0 0 24 24" style="color: rgb(156, 163, 175);"
+                    viewBox="0 0 24 24"
                     class=" text-gray-400 group-hover:text-orange-500 transition-colors">
                     <path fill="currentColor" d="M21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-9z" opacity=".3">
                     </path>
