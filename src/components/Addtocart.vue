@@ -31,21 +31,12 @@ export default {
       alert('✅ Successfully added to Order!');
     },
     methods: {
-<<<<<<< HEAD
       removeItemClicked(item) {
 
       },
       checkoutClicked(item) {
         this.$emit('addToOrder', item);
       },
-=======
-      removeItemClicked(index) {
-        this.cart.splice(index, 1);
-      },
-      checkoutClicked() {
-  this.$emit('addToOrder', this.cartitems);
-},
->>>>>>> aaeb6eef63149cd557542381a69b81b005791d9d
       removeItemClicked(id) {
 
         this.$emit('removeFromCart', item);
