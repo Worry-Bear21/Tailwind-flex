@@ -121,6 +121,7 @@
             <div class="p-4 mb-6 text-lg text-center leading-tight first-letter:capitalize font-medium text-white">
             </div>
 
+<<<<<<< HEAD
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 <div v-for="product in filteredProducts" :key="product.id"
                     class="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col">
@@ -149,24 +150,121 @@
                                 class="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 rounded-lg transition-colors">
                                 View Details
                             </button>
+=======
+            <div class="container mx-auto px-4 py-6">
+                <!-- Product Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <div v-for="(product, i) in filteredProducts" :key="product.id"
+                        class="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
+                        style="background-color: #1a202c;">
+                        <div class="w-full h-52 bg-gray-700/40 p-4 flex items-center justify-center">
+                            <img :src="product.image" :alt="product.name"
+                                class="h-full object-contain hover:scale-105 transition-transform duration-300" />
+                        </div>
+
+                        <div class="p-4 flex flex-col flex-grow text-center">
+                            <h3 class="text-white font-semibold text-lg mb-2 line-clamp-2 h-12">
+                                {{ product.name }}
+                            </h3>
+                            <p class="text-yellow-400 font-bold text-xl mb-4">
+                                {{ product.price }}
+                            </p>
+
+                            <div class="flex flex-col gap-2 mt-auto">
+                                <div class="flex gap-2">
+                                    <button @click="addToCartClicked(product)"
+                                        class="flex-1 bg-yellow-500 hover:bg-yellow-600 text-black font-medium py-2 rounded-lg">
+                                        Add to Cart
+                                    </button>
+                                    <button @click="buyNowClicked(product)"
+                                        class="flex-1 bg-green-600 hover:bg-green-700 text-white font-medium py-2 rounded-lg">
+                                        Buy Now
+                                    </button>
+                                </div>
+
+                                <button @click="openProductModal(product)"
+                                    class="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 rounded-lg transition-colors">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Categories Section -->
+                <h1 class="text-2xl font-bold text-white mt-10 mb-4 text-left">Categories</h1>
+                <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4 w-full p-4 rounded-lg shadow-sm"
+                    style="background-color: #1a202c; min-height: 420px;">
+                    <div v-for="category in categories" :key="category.id"
+                        class="bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105 p-3 h-[150px] flex flex-col items-center justify-center text-center cursor-pointer border border-gray-700">
+                        <img class="w-20 h-20 object-contain mb-2" :src="category.image" :alt="category.name" />
+                        <p class="text-white font-medium text-sm leading-tight m-0">
+                            {{ category.name }}
+                        </p>
+                    </div>
+                </div>
+
+
+                <!-- Just For You Section -->
+                <h1 class="text-xl font-bold text-white mt-8 mb-3 text-left">Just For You</h1>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-5 mt-4 w-full">
+                    <div v-for="(product, i) in products" :key="product.id"
+                        class="group h-[270px] rounded-lg shadow-sm hover:shadow-xl overflow-hidden transition-all duration-300 hover:-translate-y-1"
+                        style="background-color: #1a202c;">
+                        <img class="w-full h-48 object-contain object-center hover:cursor-pointer transition-transform duration-300 group-hover:scale-105 p-2"
+                            :src="product.image" :alt="product.name" />
+                        <div class="p-3">
+                            <div class="flex flex-col gap-1">
+                                <p
+                                    class="hover:text-[#ED2846] cursor-pointer font-medium text-white text-sm line-clamp-2 m-0">
+                                    {{ product.name }}
+                                </p>
+                                <p class="text-[#ED2846] text-base font-bold mt-1 m-0">
+                                    {{ product.price }}
+                                </p>
+                            </div>
+>>>>>>> aaeb6eef63149cd557542381a69b81b005791d9d
                         </div>
                     </div>
                 </div>
             </div> 
 
+<<<<<<< HEAD
         </div>
 
         <Modal v-if="showModal" :selectedProduct="selectedProduct" @close="closeProductModal"
             @addToCart="addToCartClicked" />
 
+=======
+                <button
+                    class="text-[#ED2846] border-2 border-[#ED2846] font-bold h-9 px-5 rounded-md hover:bg-[#ED2846] hover:text-white transition-all duration-200 text-md flex items-center justify-center gap-2 mt-8 mx-auto cursor-pointer shadow-sm hover:shadow-md">
+                    LOAD MORE
+                </button>
+
+
+                <!-- Modals -->
+                <Modal v-if="showModal" :selectedProduct="selectedProduct" @addToCart="addToCartClicked"
+                    @close="closeProductModal" />
+                <AddModal v-if="addingProduct" @close="closeaddModal" @submitProduct="add" />
+                <Footer />
+            </div>
+        </div>
+>>>>>>> aaeb6eef63149cd557542381a69b81b005791d9d
     </div>
 </template>
 
 <script>
 import Modal from './Modal.vue'
+import AddModal from './AddModal.vue'
+import Footer from './Footer.vue'
 
 export default {
+<<<<<<< HEAD
     components: { Modal },
+=======
+    components: { Modal, AddModal, Footer },
+>>>>>>> aaeb6eef63149cd557542381a69b81b005791d9d
     props: {
         addingProduct: Boolean,
         searchbar: String
@@ -181,12 +279,87 @@ export default {
             selectedProduct: '',
             cart: [], 
             order: [],
+            selectedProduct: null,
+            showModal: false,
+
             products: [
+<<<<<<< HEAD
                 { id: 1, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9tNGExX2N1X200YTRfdHJhaW5faGVsbF9saWdodC5iYTdlZjU2NjJiZDE5NTk3NjY1NmFiMjgzODhlOGEzZTY2Yzg5MDIyLnBuZw--/auto/auto/85/notrim/01666860b0f8e07a09071f023f08e062.webp', name: 'M4A4 | Hellish', price: '₱639.99' },
                 { id: 2, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9hd3BfYXdwX2xvbmdkb2dfbGlnaHQuZDJkNmRkMzk5MjU3OTc3OTBmNWM3NGE5YjY2ZjEwMjQyYzliODkyYS5wbmc-/auto/auto/85/notrim/d8e26a7dc643e3d0f073bcb5ab1999b2.webp', name: 'AWP | LongDog', price: '₱2204.66' },
                 { id: 3, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9tcDlfY3VfbXA5X2xhdHRlX2xpZ2h0LjkyMmRkZTAwYzJkMDA4NzVmNjViZGI2OWI0NThmMDdhMDJkYmNjOGIucG5n/auto/auto/85/notrim/1acfa5017dc927d649c664263f503fc9.webp', name: 'MP9 | Latte Rush', price: '₱639.99' },
                 { id: 4, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl90ZWM5X3NvX3doaXRlb3V0X3RlYzlfbGlnaHQuNjUxNTk3ZmZmNjlmMjExY2Q3MGY5MzE2MGFmNjA4MWI1OTFiMmFkZC5wbmc-/auto/auto/85/notrim/2c27d29abf93d9e6f7618fd5ad04fca4.webp', name: 'Tec-9 | Whiteout', price: '₱639.99' },
                 { id: 5, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9hazQ3X2N1X292ZXJwYXNzX21vbnN0ZXJfYWs0N19saWdodC41NjE3NTdlNTExMjMyNmEwMjYxZWU5MmY1MDE1OWM3OThjYjZhZmU3LnBuZw--/auto/auto/85/notrim/6efbbef2dcf1dda00706cd84c5fccf8e.webp', name: 'AK-47 | B the Monsterl', price: '₱639.99' }
+=======
+                { id: 1, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9kdWFsX2VsaXRlX2JpYmxpY2FsX2FuZ2VsX2xpZ2h0LmEwOTIwZWYxMjI3Y2FhYTEyNzgzMzNmMmI1YjMzMzRiZGM4YTk3NjIucG5n/auto/auto/85/notrim/2757513c4185d957e5f02cdda6793cc2.webp', name: 'Dual Berettas | Angel Eyes', price: '₱100.00' },
+                { id: 2, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9hbV9jcnlzdGFsbGl6ZWRfYmx1ZV9saWdodC45MTI5MjQ3ZTViMDYwYmIzOGI0MGZlNTYxNjIxNGI3MjhmODRlZGQ3LnBuZw--/auto/auto/85/notrim/c39469a3533f0a7032371a5d10c29283.webp', name: 'Dual Berettas | Cobalt Quartz', price: '₱1480.00' },
+                { id: 3, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9jdV9vdmVycGFzc19iYWJ5X2R1YWxpZXNfbGlnaHQuZWUxOTk4YzJkOWRiMjZiMzU0MzBjMjAxMzliODU0YTdiODkwNWE3OC5wbmc-/auto/auto/85/notrim/1aa696b3c6a985ac040a8963462173ea.webp', name: 'Dual Berettas | Sweet Little Angels', price: '₱121.00' },
+                { id: 4, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9jdV9lbGl0ZXNfYmV3YXJlX2xpZ2h0LmJhZDc5MDZlMGNjNTI4ODJiNTVhMDIxMTY2MzM1YWM3MzEwZmJiYWQucG5n/auto/auto/85/notrim/171523c75e59dad060997c8c8f4f616a.webp', name: 'Dual Berettas | Flora Carnivora', price: '₱59.99' },
+                { id: 5, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9jdV9kdWFsX2VsaXRlc19yYWxseV9saWdodC5iYzhiZWEwNTkzZjUzMWNiN2UxYjdhODlkM2U3NGJkMjhkZDRiNTQyLnBuZw--/auto/auto/85/notrim/12bce52971502759ed24ba269160b9ba.webp', name: 'F85 Rechargeable Turbo Fan 100 Super Strong Wind Speed Function', price: '₱52.99' },
+                { id: 6, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9zcF9kcnlfd29vZF9saWdodC40NTRiZTExNDM0NGE4NTliZTNiZDk0MGE0MDAxYWUxMjk1OWY2ZWMxLnBuZw--/auto/auto/85/notrim/0e51cbd2fac96dfb9ff61c66b7bc5113.webp', name: 'Dual Berettas | Drift Wood', price: '₱129.50' },
+                { id: 7, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9jbGFycGFzc19iYW5nZXJpbmVfbGlnaHQuYjFlNTI5NGZjYzEwMWRlMGU2NmE0NjY2MTY0NjY5ZGUyYTVhZGUwZC5wbmc-/auto/auto/85/notrim/04b29d291ef1bee40e0a025648b7aaf3.webp', name: 'Dual Berettas | Demolition', price: '₱45.50' },
+                { id: 8, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9hbl9lbWVyYWxkX2xpZ2h0LjVlMjRmYWY0NjVhZjVlOGQzZjZjOTEzYjMzMjFlZDQ4NDQxZGJkNzMucG5n/auto/auto/85/notrim/efbd2a572d6c2785c8425599a0ebb411.webp', name: 'Dual Berettas | Emerald', price: '₱111.13' },
+                { id: 9, image: 'https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9nc19kdWFsX2JlcmV0dGFzX3RyZWFkX2xpZ2h0LjUxN2MzMTVhYTNmZDM0YWQ5OTViM2YxZDUwNWVlNGE5ODg3ZmNmZmEucG5n/auto/auto/85/notrim/a072047867eed065c0ead976b109df71.webp', name: 'Dual Berettas | Tread', price: '₱95.50' },
+                { id: 10, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9hbl9uYXZ5X2xpZ2h0LmEyYmU0ZDZmODBjZDE1MzE3YzMwYWM2YzA5YTkyNjQyNDMzZWI4MzgucG5n/auto/auto/85/notrim/d303fc9065bb112904cc80fe00806c94.webp', name: "Dual Berettas | Anodized Navy", price: '₱88.00' },],
+            categories: [
+                { id: 1, name: 'PISTOLS', image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9kZWFnbGVfZGVhZ2xlX2ZpcmVicmVhdGhpbmdfbGlnaHQuNWY1MGZkODA3NGFjMjRhNjE3YmM4M2ZkOTRlMDQ0OGYyNWQ3NTBlMy5wbmc-/auto/auto/85/notrim/039ebf1439a7ac5647bcfe7095c0d0c4.webp' },
+                { id: 2, name: "SMG's", image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9iaXpvbl9jdV9iaXpvbl9hbGxfaW5fbGlnaHQuYzM4YmUyN2QwNzViMjBhMjc0MDViNTZjOWMxN2M2NGU0YmVjODZiNi5wbmc-/auto/auto/85/notrim/876fadc7f9b2e5c23201f0a3a20d48af.webp' },
+                { id: 3, name: 'SHOTGUNS', image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9zYXdlZG9mZl9jdV93cF9zYXdlZG9mZl9saWdodC4wYTI2NDRlMTFiMDI5NmU3NDZmMWZhMDVjNDQ0MjZlNGI2OTM3OTE2LnBuZw--/auto/auto/85/notrim/a3b27f5d06f312bb9bbc9837aa007318.webp' },
+                { id: 4, name: 'MACHINE GUNS', image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9tMjQ5X20yNDlfYmxvY2tzX3B1cnBsZV9saWdodC44OGI1YjU2MzhmNThjZGQzZTNjYTIyYzlmNTY4ZGU2ZWJlOTNiYWNlLnBuZw--/auto/auto/85/notrim/b3ac3af20725f8e379a969bd4c05432b.webp' },
+                { id: 5, name: 'RIFLES', image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9nYWxpbGFyX2N1X2dhbGlsX2Vjb19saWdodC5jYjVjYTg0MmM5NDVjMjViNmRiYTk1YTc4MDE2YjYwNDI1MzBkZjAzLnBuZw--/auto/auto/85/notrim/56a00bda80be24638ee883da06253b5f.webp' },
+                { id: 6, name: 'SNIPER RIFLES', image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9zY2FyMjBfY3VfYmx1ZXByaW50X3NjYXJfbGlnaHQuZGI5MzhjNWEzMmQxOTY0MGQ3NTBhZmY0NmI5NjViYTAwNTViMTk5NS5wbmc-/auto/auto/85/notrim/f55c037acddbd83128304b0681e6d2b3.webp' },
+                { id: 7, name: 'KNIVES', image: 'https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9rbmlmZV9rYXJhbWJpdF9jdV9rYXJhbV9sb3JlX2xpZ2h0LmY4Y2Y4MmY1NjA5NmViYjczNWU5N2RkYTBjM2VmMzIxMjg4MWM2MmMucG5n/auto/auto/85/notrim/a60521a3b8512bf062617007782d2fee.webp' },
+                { id: 8, name: 'WEAPON CASES', image: 'https://cdn.csgoskins.gg/public/uih/categories/aHR0cHM6Ly9jc2dvc2tpbnMuZ2cvYnVpbGQvYXNzZXRzL3dlYXBvbi1jYXNlLURONXRXb1F0LnBuZw--/auto/auto/85/notrim/e95c7d17ab20d6964d97cd6125f3895c.webp' },
+                { id: 9, name: 'BROKEN FANG AGENTS', image: 'https://cdn.csgoskins.gg/public/uih/collections/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvY29sbGVjdGlvbnMvOWI0NzE4NzdjZDEyMGFlMTViMGRlMTRmNzQyNmQ5MGMvZGVmYXVsdC5wbmc-/auto/auto/85/notrim/fe9ab330278be0206122218e4f60e6f2.webp' },
+                { id: 10, name: 'AGENTS', image: 'https://cdn.csgoskins.gg/public/uih/categories/aHR0cHM6Ly9jc2dvc2tpbnMuZ2cvYnVpbGQvYXNzZXRzL2FnZW50LURCcWVZM3JjLnBuZw--/auto/auto/85/notrim/59baa5e3eb3a07c8f090c98cc1bf88d1.webp' },
+                { id: 11, name: 'HARLE QUIN SKINS', image: 'https://cdn.csgoskins.gg/public/uih/collections/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvY29sbGVjdGlvbnMvNTQ2OGYxMGRhMWMxYWFiMThjODlkZGMwOWQxYzUzOGMvZGVmYXVsdC5wbmc-/auto/auto/85/notrim/bf29518e527f3e67d1d9eb193d63b121.webp' },
+                { id: 12, name: 'ALL STICKERS', image: 'https://cdn.csgoskins.gg/public/uih/categories/aHR0cHM6Ly9jc2dvc2tpbnMuZ2cvYnVpbGQvYXNzZXRzL3N0aWNrZXItQ0MwZmhhZWgucG5n/auto/auto/85/notrim/4de2a0914da1d08aa8da75e969636704.webp' },
+                { id: 13, name: 'GRAFITTIS', image: 'https://cdn.csgoskins.gg/public/uih/categories/aHR0cHM6Ly9jc2dvc2tpbnMuZ2cvYnVpbGQvYXNzZXRzL2dyYWZmaXRpLUR1dk9FTXdBLnBuZw--/auto/auto/85/notrim/f5e93f3b4d60d4ffab097f266e2ff201.webp' },
+                { id: 14, name: 'COLOGNE 2026', image: 'https://cdn.csgoskins.gg/public/uih/tournaments/aHR0cHM6Ly9jc2dvc2tpbnMuZ2cvYnVpbGQvYXNzZXRzLzIwMjYtaWVtLWNvbG9nbmUtQjkyaDkyU3kucG5n/auto/auto/85/notrim/ab9b129ee98ff226603017bddc07eb8e.webp' },
+                { id: 15, name: 'BOREAL COLLECTION', image: 'https://cdn.csgoskins.gg/public/uih/collections/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvY29sbGVjdGlvbnMvOGM4NjEwNGJkZTg1NDg0MDQxOGYxYmZhYzExNzljM2EvZGVmYXVsdC5wbmc-/auto/auto/85/notrim/bdde8b871a1e946ee47fe46c07072620.webp' },
+                { id: 16, name: 'COLOGNE 2016', image: 'https://cdn.csgoskins.gg/public/uih/tournaments/aHR0cHM6Ly9jc2dvc2tpbnMuZ2cvYnVpbGQvYXNzZXRzLzIwMTYtZXNsLW9uZS1jb2xvZ25lLUJQWTJYY0ZWLnBuZw--/auto/auto/85/notrim/7460fe71c3994bc2191b146683b94caf.webp' }
+            ],
+            Justforyou: [
+                { id: 1, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9kdWFsX2VsaXRlX2JpYmxpY2FsX2FuZ2VsX2xpZ2h0LmEwOTIwZWYxMjI3Y2FhYTEyNzgzMzNmMmI1YjMzMzRiZGM4YTk3NjIucG5n/auto/auto/85/notrim/2757513c4185d957e5f02cdda6793cc2.webp', name: 'Dual Berettas | Angel Eyes', price: '₱100.00' },
+                { id: 2, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9hbV9jcnlzdGFsbGl6ZWRfYmx1ZV9saWdodC45MTI5MjQ3ZTViMDYwYmIzOGI0MGZlNTYxNjIxNGI3MjhmODRlZGQ3LnBuZw--/auto/auto/85/notrim/c39469a3533f0a7032371a5d10c29283.webp', name: 'Dual Berettas | Cobalt Quartz', price: '₱1480.00' },
+                { id: 3, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9jdV9vdmVycGFzc19iYWJ5X2R1YWxpZXNfbGlnaHQuZWUxOTk4YzJkOWRiMjZiMzU0MzBjMjAxMzliODU0YTdiODkwNWE3OC5wbmc-/auto/auto/85/notrim/1aa696b3c6a985ac040a8963462173ea.webp', name: 'Dual Berettas | Sweet Little Angels', price: '₱121.00' },
+                { id: 4, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9jdV9lbGl0ZXNfYmV3YXJlX2xpZ2h0LmJhZDc5MDZlMGNjNTI4ODJiNTVhMDIxMTY2MzM1YWM3MzEwZmJiYWQucG5n/auto/auto/85/notrim/171523c75e59dad060997c8c8f4f616a.webp', name: 'Dual Berettas | Flora Carnivora', price: '₱59.99' },
+                { id: 5, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9jdV9kdWFsX2VsaXRlc19yYWxseV9saWdodC5iYzhiZWEwNTkzZjUzMWNiN2UxYjdhODlkM2U3NGJkMjhkZDRiNTQyLnBuZw--/auto/auto/85/notrim/12bce52971502759ed24ba269160b9ba.webp', name: 'F85 Rechargeable Turbo Fan 100 Super Strong Wind Speed Function', price: '₱52.99' },
+                { id: 6, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9zcF9kcnlfd29vZF9saWdodC40NTRiZTExNDM0NGE4NTliZTNiZDk0MGE0MDAxYWUxMjk1OWY2ZWMxLnBuZw--/auto/auto/85/notrim/0e51cbd2fac96dfb9ff61c66b7bc5113.webp', name: 'Dual Berettas | Drift Wood', price: '₱129.50' },
+                { id: 7, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9jbGFycGFzc19iYW5nZXJpbmVfbGlnaHQuYjFlNTI5NGZjYzEwMWRlMGU2NmE0NjY2MTY0NjY5ZGUyYTVhZGUwZC5wbmc-/auto/auto/85/notrim/04b29d291ef1bee40e0a025648b7aaf3.webp', name: 'Dual Berettas | Demolition', price: '₱45.50' },
+                { id: 8, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9hbl9lbWVyYWxkX2xpZ2h0LjVlMjRmYWY0NjVhZjVlOGQzZjZjOTEzYjMzMjFlZDQ4NDQxZGJkNzMucG5n/auto/auto/85/notrim/efbd2a572d6c2785c8425599a0ebb411.webp', name: 'Dual Berettas | Emerald', price: '₱111.13' },
+                { id: 9, image: 'https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9nc19kdWFsX2JlcmV0dGFzX3RyZWFkX2xpZ2h0LjUxN2MzMTVhYTNmZDM0YWQ5OTViM2YxZDUwNWVlNGE5ODg3ZmNmZmEucG5n/auto/auto/85/notrim/a072047867eed065c0ead976b109df71.webp', name: 'Dual Berettas | Tread', price: '₱95.50' },
+                { id: 10, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9hbl9uYXZ5X2xpZ2h0LmEyYmU0ZDZmODBjZDE1MzE3YzMwYWM2YzA5YTkyNjQyNDMzZWI4MzgucG5n/auto/auto/85/notrim/d303fc9065bb112904cc80fe00806c94.webp', name: "Dual Berettas | Anodized Navy", price: '₱88.00' },
+                { id: 11, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9oeV92aW5lc19saWdodC45YjRlMjNmYjJlYjRlNTM0Zjg1ZDJiYjIyNjg0ZTllMjMwOTY3MTI2LnBuZw--/auto/auto/85/notrim/3b0324f65c04c0d6e1e2283d16d1c36d.webp', name: 'Dual Berettas | Briar', price: '₱231.57' },
+                { id: 12, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9lbGl0ZV9jdV9zZWFzb25fZWxpdGVzX2JyYXZvX2xpZ2h0Ljk5MmFhM2VkMDI2NjllZTZkNjJjMzc3ZTU5YmRmZmQ2OWI4ZjE1MGIucG5n/auto/auto/85/notrim/77c547e6567d2b45c4e9b2468a4702a8.webp', name: 'Dual Berettas | Black Limba', price: '₱510.08' },
+                { id: 13, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9tYWMxMF9tYWMxMF90cmFpbl9jcmFzaF9saWdodC42MzYxYmU0NWExN2IyZTMxMjc5ZWRkZjFhNTY1M2QwMzk0YzYyMGZmLnBuZw--/auto/auto/85/notrim/445b19568b78b256cdaecbf89cd17d7a.webp', name: 'MAC-10 | Derailment', price: '₱59.00' },
+                { id: 14, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9tYWMxMF9nc19tYWMxMF9zdGFsa2VyX2xpZ2h0LmM4NGRkOTg4OGNlOTg5NDM0MjRhNTllYWU4N2ZhODgxYTVkM2E1ZGUucG5n/auto/auto/85/notrim/f54bc50faefed74459cafe70762d316c.webp', name: 'MAC-10 | Stalker', price: '₱21.67' },
+                { id: 15, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9tcDVzZF9nc19tcDVfZmVzdGl2YWxfZHJpcF9saWdodC5kOGFmYTRmZDM2ZGNjNDM5MjA1YzcyZjYzNDYwYmU1ZDYxMTkzNjhjLnBuZw--/auto/auto/85/notrim/c4b3109bae8ad817d1e8aa57858787b3.webp', name: 'MP5-SD | Phosphor', price: '₱74.08' },
+                { id: 16, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl91bXA0NV9zcF9kYXBwbGVfbGlnaHQuMWU0NTU2NWFhYWNkYzY2ZmI3OWEyNGFjNjk5YzQwYzMyOWJhOGE1Mi5wbmc-/auto/auto/85/notrim/f9ea015064ad2da1311a8aa19d47c1e0.webp', name: 'UMP-45 | Houndstooth', price: '₱109.00' },
+                { id: 17, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9wOTBfY3VfcDkwLWFzaWltb3ZfbGlnaHQuM2YyNGEyNWQ4MTE4ODJjYWNkMzc4MWU5MTcxNjllOGRmZjYzMmM3NC5wbmc-/auto/auto/85/notrim/a106c5fd239eca7bb8dc2b1c6508e182.webp', name: 'P90 | Asiimov', price: '₱168.08' },
+                { id: 18, image: 'https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9wOTBfY3VfcDkwX3NoYXBld29vZF9saWdodC5mZGU4YjQ4ZTI5ZDg2OTFiNTA2MTFjM2M1MTlkM2FiZTRiM2I2M2RlLnBuZw--/auto/auto/85/notrim/3272ee244822cdc33b02edee222dc68e.webp', name: 'UMP-45 | Roadblock', price: '₱159.08' },
+                { id: 19, image: 'https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl91bXA0NV9hYV9mYWRlX3VtcF9saWdodC43NjM4MDdiNzk3YmQ1YTlhMWQwY2UwMzg4ZGNjYTgxNzEyM2JkMTM2LnBuZw--/auto/auto/85/notrim/924f37afcf3eb3d82e31f0c3bda33b9a.webp', name: 'UMP-45 | Fade', price: '₱128.15' },
+                { id: 20, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl91bXA0NV9hYV91bXA0NV9tb29ucmlzZV9zdW5zZXRfbGlnaHQuM2I0ZWRiNmQxZmEyYmU4YzkxNTlhMzI0NWZhNGQ3OGRhMDJhMDk4Zi5wbmc-/auto/auto/85/notrim/e3c8fae4c33ef389f4c8af9e4ebfff9e.webp', name: 'UMP-45 | Moonrise', price: '₱37.98' },
+                { id: 21, image: 'https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl91bXA0NV9nc191bXBfYWJ5c3NfbGlnaHQuMjFmMmIyNzQzOGE4MzI2M2Y3ZmYwNjg2MjIzOTM1NTliYmRjMTEwYS5wbmc-/auto/auto/85/notrim/c3c9ed887dcc303b2675d51a84f0016e.webp', name: 'UMP-45 | Scaffold', price: '₱69.12' },
+                { id: 22, image: 'https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl91bXA0NV9oeV9kZHBhdF91cmJfbWVkaXVtLjg2ODQyZjFiMjM4Mjk5NGQ3ZWE5NzQxYTVjYzViM2UxOWZkOTY0YTAucG5n/auto/auto/85/notrim/2467a08424ba1a3fa89b4611b8d3dcf6.webp', name: 'UMP-45 | Urban DDPAT', price: '₱36.00' },
+                { id: 23, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl91bXA0NV9oeV9saW5lc19vcmFuZ2VfbGlnaHQuZmJiZTRhYmI5ZjFhYThmY2UyMWMwNjdjY2EyZjBiNjY5MGY3NWQ5Zi5wbmc-/auto/auto/85/notrim/8165d8768ae431b66c97a39ef6e0f08e.webp', name: 'UMP-45 | Labyrinth', price: '₱99.00' },
+                { id: 24, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl91bXA0NV9zcF91bXA0NV9kLXZpc2lvbnNfbGlnaHQuYzE1YzNiNGJmNzM4ZWZjZjFhZmEyYjY5MDRiZGRlMGRkYzgxMDc5Yy5wbmc-/auto/auto/85/notrim/cf070a19a1172e3379f128af5e7950eb.webp', name: 'UMP-45 | Delusion', price: '₱52.12' },
+                { id: 25, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9tYWc3X2N1X21hZzdfcmVkaG90X2xpZ2h0LmUyNmJlNGEzYTlkMDkxOTlhY2E0ODU2ZmU4ZDk4ODY2YmE2OTMzOTkucG5n/auto/auto/85/notrim/74a9dbe94516cba33051328a7265413a.webp', name: 'MAG-7 | Heats', price: '₱68.00' },
+                { id: 26, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9tYWc3X2h5X2dlb21ldHJpY19zdGVwc19wZWFybF9saWdodC4zZmUzZjkxODhkYjAyNTY3ZDViMTdhNjU4ZDVhZDQ2OTZkZmQ4ZWYyLnBuZw--/auto/auto/85/notrim/5e2cc29707973a79617bc74796c49638.webp', name: 'MAG-7 | Prism Terrace', price: '₱88.65' },
+                { id: 27, image: 'https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9tYWc3X2h5X251Y2xlYXJfaG90b3JhbmdlX2xpZ2h0LmNmNWNhZWE0ODY0MDc0YjZhM2Q3MmQ5ZDRmZTE0MzBmNWM5MDVhMjYucG5n/auto/auto/85/notrim/b1cac3e1e7a50faf41f48e643101613f.webp', name: "MAG-7 | Core Breach", price: '₱8.00' },
+                { id: 28, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9tYWc3X3NwX2hhemFyZF9icmF2b19saWdodC44Mzc2ZTViMTViMjE4NjRjZDVhYjc2MTA0ODVlMmE5OGFhZTk5NTE4LnBuZw--/auto/auto/85/notrim/31f8eabb811226f97f2f3819dacdb59c.webp', name: 'MAG-7 | Counter Terrace', price: '₱66.00' },
+                { id: 29, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9ub3ZhX2N1X292ZXJwYXNzX3d1cnN0X25vdmFfbGlnaHQuYWM3OGFjZmVkODBiNDhjZjJiY2I0Y2RjNzJiZDc5ZTYwZTgzN2JkYi5wbmc-/auto/auto/85/notrim/0b440e3aac965829b40e59f43ced76d8.webp', name: 'Nova | Wurst Hölle', price: '₱39.99' },
+                { id: 30, image: 'https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9ub3ZhX2N1X25vdmFfdG95X3NvbGRpZXJfbGlnaHQuNTVlNWZmMzU3Nzk4YTk5ZmI0ZTg3Nzk0ZmY3OWY0Zjg3OWFkNjQ1MS5wbmc-/auto/auto/85/notrim/285f55c24ba3cb60076b09b8b06e891a.webp', name: 'Nova | Toy Soldier', price: '₱245.26' },
+                { id: 31, image: 'https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9ub3ZhX2N1X25vdmFfaHlwZXJiZWFzdF9saWdodC4yMDQ0Y2M0ZWNjZTE4NTEyZWEwZTlhYWQ1ODY4MDY4MTMyNGM0M2Y4LnBuZw--/auto/auto/85/notrim/6a5a35ecda4004c2a9c5948ded11994b.webp', name: 'Nova | Hyper Beast', price: '₱112.70' },
+                { id: 32, image: 'https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9tMjQ5X3NwX21lc2hfcHl0aG9uX2xpZ2h0LjNiNWI5ZTdiZDNhMjJiOGJlMGQ1NTRmY2ZlZjY2MDE4OGE5YmZjMTIucG5n/auto/auto/85/notrim/64b6459ca3d7e58d081705dffc1990b6.webp', name: 'M249 | Gator Mesh', price: '₱5.00' },
+                { id: 33, image: 'https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9tMjQ5X3NvX2tleWNvbG9yc19saWdodC4zMmY1MGNlYzQxNjEyNTZiNTUzOWQ4NTA4MWQyMTViMzFjMDI0MDAyLnBuZw--/auto/auto/85/notrim/5c36db8751f2f75d1409f35d33a60d03.webp', name: 'M249 | Impact Drill', price: '₱65.00' },
+                { id: 34, image: 'https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9tMjQ5X2N1X20yNDlfZG93bnZvdGVfbGlnaHQuM2VjODlhMjk5NTlmYmFkN2E3MjA1Y2RlNWQ4MzNjNDY5YjAxOTFkNi5wbmc-/auto/auto/85/notrim/5c0c148253a0cfae1ee1b84b2d8ed850.webp', name: 'M249 | Downtown', price: '₱78.24' },
+                { id: 35, image: 'https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9tMjQ5X2dzX20yNDlfbmVidWxhX2NydXNhZGVyX2xpZ2h0LmRmZjBlOTI1M2Q1ZDJhY2JmOTc5MzQwZmRkMjdlYjllMzA4MzBkNzIucG5n/auto/auto/85/notrim/17fafc1cfb6b45a33217420e131f1169.webp', name: 'M249 | Nebula Crusader', price: '₱89.25' },
+                { id: 36, image: 'https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl94bTEwMTRfY3VfeG0xMDE0X2luY2luZXJhdG9yX2xpZ2h0LjAwYjFhMmU3NDE2Zjg5MmQ2ZTQ5ODFkZWZhOTk0OTQyYmFiY2Q3ZDcucG5n/auto/auto/85/notrim/fde2c7f68f7f3d324cd471d6af96167c.webp', name: 'XM1014 | Incinegator', price: '₱137.25' },
+                { id: 37, image: 'https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl94bTEwMTRfYXFfeG0xMDE0X3B1bmtfbGlnaHQuMTUwYjdjZWE2MzFiOGYzOTYwZjBiZDU4ZmZjMmY4YTMyMjhkMTYxNi5wbmc-/auto/auto/85/notrim/9970d0c579ded7c461d8f9b5d4e2adb9.webp', name: 'XM1014 | XOXO', price: '₱59.99' },
+                { id: 38, image: 'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9hazQ3X2N1X292ZXJwYXNzX21vbnN0ZXJfYWs0N19saWdodC41NjE3NTdlNTExMjMyNmEwMjYxZWU5MmY1MDE1OWM3OThjYjZhZmU3LnBuZw--/auto/auto/85/notrim/6efbbef2dcf1dda00706cd84c5fccf8e.webp', name: 'AK-47 | B the Monster', price: '₱29.99' },
+                { id: 39, image: 'https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9hazQ3X2h5ZV9hazQ3X25vdXZlYXVfbGlnaHQuZTVlM2RiMzMxNWNhNWQwNmVjNzcxZDUxMTQ5ZWE3Mjc2ZWM4NGNiOS5wbmc-/auto/auto/85/notrim/d5a186119cdd871cb36324b9394163e0.webp', name: 'AK-47 | Nouveau Rouge', price: '₱129.80' },
+                { id: 40, image: 'https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9nYWxpbGFyX2N1X2dhbGlsX2Vjb19saWdodC5jYjVjYTg0MmM5NDVjMjViNmRiYTk1YTc4MDE2YjYwNDI1MzBkZjAzLnBuZw--/auto/auto/85/notrim/4c9eeecd4836d40f15f93da19eb8f569.webp', name: 'Galil AR | Eco', price: '₱60.00' }
+>>>>>>> aaeb6eef63149cd557542381a69b81b005791d9d
             ]
         }
     },
@@ -198,7 +371,7 @@ export default {
             const query = this.searchbar.toLowerCase().trim();
             return this.products.filter(product =>
                 product.name.toLowerCase().includes(query)
-            )
+            );
         }
     },
     methods: {
@@ -207,6 +380,7 @@ export default {
             this.currentIndex = i;
         },
         closeProductModal() {
+<<<<<<< HEAD
             this.showModal = false;
             this.selectedProduct = null;
         },
@@ -228,6 +402,30 @@ export default {
             this.order.push(product);
         },
         addOrder() {
+=======
+            this.showProductModal = false;
+            this.showModal = false;
+            this.selectedProduct = null;
+        },
+        closeaddModal() {
+            this.$emit('close');
+        },
+        add(product) {
+            this.$emit('addTocart', { ...product });
+            alert('✔️ Added to Cart!');
+        },
+        addorder(product) {
+            this.$emit('Order', { ...product });
+        },
+        eaddsacart(product) {
+            this.$emit('addTocart', product);
+        },
+        eaddsaorder(product) {
+            this.$emit('Order', product);
+        },
+        addOrder() {
+            this.$emit('Order', this.cartitems);
+>>>>>>> aaeb6eef63149cd557542381a69b81b005791d9d
             alert('🎉 Order Successful!');
         },
         openProductModal(product) {
@@ -235,8 +433,12 @@ export default {
             this.showModal = true;
         },
         addToCartClicked(product) {
+<<<<<<< HEAD
             this.cart.push({ ...product });
             alert('✅ Added to Cart!');
+=======
+            this.$emit('addToCart', product);
+>>>>>>> aaeb6eef63149cd557542381a69b81b005791d9d
             this.closeProductModal();
         },
         buyNowClicked(product) {
@@ -247,5 +449,5 @@ export default {
             this.cart.splice(index, 1);
         }
     }
-}
+};
 </script>

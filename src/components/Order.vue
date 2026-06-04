@@ -27,7 +27,10 @@
                 <div class="mt-4 flex justify-between items-center border-t pt-3">
                     <p class="text-gray-400">Total: <span class="font-bold">₱5,697.00</span></p>
                     <a href="#" class="text-blue-600 hover:underline text-sm">View Invoice</a>
+<<<<<<< HEAD
 
+=======
+>>>>>>> aaeb6eef63149cd557542381a69b81b005791d9d
                 </div>
             </div>
         </div>
