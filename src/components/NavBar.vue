@@ -7,7 +7,7 @@
         <p @click="savemorebtn" class="text-gray-300 hover:text-white hover:underline px-2 cursor-pointer">SAVE MORE ON APP</p>
         <span class="text-gray-600">|</span>
         
-        <p @click="navigate('home')" class="text-gray-200 hover:text-white hover:underline px-2 cursor-pointer">SELL ON LAZADA</p>
+        <p @click="changePage('home')" class="text-gray-200 hover:text-white hover:underline px-2 cursor-pointer">SELL ON LAZADA</p>
         <span class="text-gray-600">|</span>
 
         <div class="relative inline-block">
@@ -17,7 +17,7 @@
         <span class="text-gray-600">|</span>
 
        
-        <p @click="navigate('showOrder')" class="text-gray-300 hover:text-white hover:underline px-2 cursor-pointer">ORDER HISTORY</p>
+        <p @click="changePage('showOrder')" class="text-gray-300 hover:text-white hover:underline px-2 cursor-pointer">ORDER HISTORY</p>
         <span class="text-gray-600">|</span>
         <p class="text-gray-300 hover:text-white hover:underline px-2 cursor-pointer">LOGIN</p>
         <span class="text-gray-600">|</span>
@@ -27,7 +27,7 @@
 
     <div class="max-w-7xl mx-auto px-4 py-4 flex items-center gap-6">
       
-      <div @click="navigate('home')" class="flex items-center w-[120px] cursor-pointer">
+      <div @click="changePage('home')" class="flex items-center w-[120px] cursor-pointer">
         <img src="https://tse1.mm.bing.net/th/id/OIP.aV2au23ZP-jyEmJz0rDjKwHaG2?pid=ImgDet&w=474&h=438&rs=1&o=7&rm=3" alt="Lazada Logo" class="w-full h-20 object-contain">
       </div>
 
@@ -41,7 +41,7 @@
       </div>
 
       
-      <svg @click="navigate('cart')" class="w-6 h-6 text-gray-200 hover:text-[#EE4D2D] cursor-pointer transition-all" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+      <svg @click="changePage('cart')" class="w-6 h-6 text-gray-200 hover:text-[#EE4D2D] cursor-pointer transition-all" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
       </svg>
 

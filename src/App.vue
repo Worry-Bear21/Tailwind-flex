@@ -1,22 +1,43 @@
 <template>
   <div>
-    <Navbar @openAddModal="showaddModal = true" @goTo="changePage" @handleSearch="handleSearch" :cart="cart" />
+    <Navbar 
+      @openAddModal="addingProduct = true" 
+      @goTo="changePage" 
+      @handleSearch="handleSearch" 
+      :cart="cart" 
+    />
 
-    <Home v-if="currentPage === 'home'" :addingProduct="showaddModal" :searchbar="searchbar" @addToCart="addToCart"
-      @addToOrder="addToOrder" @closeAddModal="closeAddModal" />
+   <Home 
+      v-if="currentPage === 'home'" 
+      :addingProduct="showaddModal" 
+      :searchbar="searchbar" 
+      :products="products"
+      @buyNow="proceedToOrder" 
+      @openProductModal="showMyModal" 
+      @addToCart="addToCart" 
+    />
 
+    <Addtocart 
+      v-if="currentPage === 'cart'" 
+      :cartitems="cart" 
+      @addToOrder="addToOrder"
+      @removeFromCart="removeFromCart" 
+    />
 
-    <Addtocart v-if="currentPage === 'showCart'" :cartitems="cart" @addToOrder="addToOrder"
-      @removeFromCart="removeFromCart" />
+    <Order 
+      v-if="currentPage === 'showOrder'" 
+      :orderlist="order" 
+    />
 
-    <Order v-if="currentPage === 'showOrder'" :orderlist="order" />
+    <CustomModal 
+      v-if="addingProduct" 
+      @closeAddModal="addingProduct = false" 
+      @submitProduct="submitProduct" 
+    />
 
-    <Addtocart v-if="currentPage === 'showCart'" :cartitems="cart" @addToorder="addToOrder" @Order="addToOrder"
-      @removeFromCart="removeFromCart" />
-    <Order v-if="currentPage === 'showOrder'" :orders="order" />
-
-    <CustomModal v-if="showaddModal" @closeAddModal="closeAddModal" @submitProduct="submitProduct" />
-
+    <AddModal v-if="addingProduct" @close="closeAddModal" @submitProduct="submitProduct" />
+    
+    <Footer />
   </div>
 </template>
 
@@ -26,48 +47,44 @@ import Home from './components/Home.vue'
 import Addtocart from './components/Addtocart.vue'
 import Order from './components/Order.vue'
 import CustomModal from './components/CustomModal.vue'
+import AddModal from './components/AddModal.vue'
+import Footer from './components/Footer.vue'
 
 export default {
-  components: { Navbar, Home, Addtocart, Order, CustomModal },
+  components: { 
+    Navbar, 
+    Home, 
+    Addtocart, 
+    Order, 
+    CustomModal, 
+    AddModal, 
+    Footer 
+  },
   data() {
     return {
-      showaddModal: false,
-      currentPage: 'home', 
+      addingProduct: false, 
+      currentPage: 'home',
       display: "",
       num: "",
       cart: [],
       order: [],
-      searchbar: '',
+      searchbar: ''
     }
   },
   methods: {
-
-    removeFromCart(id) {
-      this.cart = this.cart.filter(item => item.id !== id)
-    },
-    addToOrder(product) {
-      this.order.push(...product)
+    changePage(page) {
+      this.currentPage = page
     },
 
-    addToCart(product) {
-      const naaNa = this.cart.find(item => item.id === product.id);
-      if (!naaNa) {
-        this.cart.push({ ...product });
-        alert('✅ Gidugang sa Cart!');
-      } else {
-        alert('⚠️ Naa na ni sa Cart!');
-      }
+    closeAddModal() {
+      this.addingProduct = false
     },
 
-    removeFromCart(id) {
-      this.cart = this.cart.filter(item => item.id !== id)
+    handleSearch(search) {
+      this.searchbar = search
     },
-
     addToOrder(products) {
-      const items = Array.isArray(products) ? products : [products];
-      items.forEach(item => {
-        this.order.push({ ...item, orderDate: new Date().toLocaleDateString() });
-      });
+      this.order.push(products);
       this.cart = [];
       this.currentPage = 'showOrder';
       alert('🎉 Order Successful!');
@@ -75,21 +92,8 @@ export default {
 
     submitProduct(product) {
       this.addToCart(product);
-      this.closeAddModal();
+      this.addingProduct = false;
     },
-
-    closeAddModal() {
-      this.showaddModal = false;
-    },
-
-    changePage(page) {
-      console.log('goTo:', page); 
-      this.currentPage = page;
-    },
-
-    handleSearch(search) {
-      this.searchbar = search;
-    }
   }
 }
 </script>
