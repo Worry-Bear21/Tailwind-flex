@@ -1,4 +1,4 @@
-20260602 06:53:28 || <template>
+ <template>
     <footer class="bg-gray-900 w-full border-t border-gray-800 mt-8">
         <div class="max-w-7xl mx-auto px-4 py-6 bg-[#1a202c]">
 
